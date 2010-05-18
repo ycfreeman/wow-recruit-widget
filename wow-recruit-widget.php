@@ -3,7 +3,7 @@
  * Plugin Name: WOW Recruitment Widget
  * Plugin URI: http://www.ycfreeman.com/2010/05/wow-recruitment-wordpress-widget-10.html
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -35,7 +35,6 @@ wp_enqueue_style('wrwstyle','/wp-content/plugins/wow-recruit-widget/wow-recruit-
 static $wrstatus = array("Closed","Low","Medium","High");
 static $wrclasstext = array("Death Knight","Druid","Paladin","Hunter","Rogue","Priest","Shaman","Mage","Warlock","Warrior");
 static $wrclasskey = array("deathknight","druid","paladin","hunter","rogue","priest","shaman","mage","warlock","warrior");
-
 
 /**
  * Register our widget.
@@ -166,7 +165,7 @@ class Wow_Recruit_Widget extends WP_Widget {
 <table class="wow-recruit-table" style="width:100%;">
 
 <?php
-		
+
 		foreach ($wrtable as $k1 =>$v1)
 		{
 			/*echo $k1.'=>'.$v1[0].'=>'.$v1[1].'<br />';*/
@@ -175,7 +174,7 @@ class Wow_Recruit_Widget extends WP_Widget {
 ?>
 			<tr>
 				<td rowspan="2" width="30px">
-					<img src="<?php echo WP_PLUGIN_URL?>/wow-recruit-widget/images/class-<?php echo $wrclasskey[$k1];?>.png" class="wow-recruit-icon"/> 
+					<img src="<?php echo WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__))?>images/class-<?php echo $wrclasskey[$k1];?>.png" class="wow-recruit-icon"/> 
 				</td>
 				<td><strong class="wow-recruit-<?php echo $wrclasskey[$k1]; ?>"><?php echo $wrclasstext[$k1]?> </strong>
 				</td>
@@ -209,16 +208,25 @@ class Wow_Recruit_Widget extends WP_Widget {
 		echo $after_widget;
 	}
 
-
+	
 	/**
 	 * Update the widget settings.
 	 */
 	function update( $new_instance, $old_instance ) {
+	
+	/**
+	 * added simple url validation
+	 * @since 1.0.1
+	 */
+		function ValidateURL($url)
+		{
+			return $url ? (preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url)? $url : 'http://'.$url) : '';
+		}
 		$instance = $old_instance;
 
 		/* Strip tags for title and title_url to remove HTML (important for text inputs). */
 		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['title_url'] = strip_tags( $new_instance['title_url'] );
+		$instance['title_url'] = ValidateURL(strip_tags( $new_instance['title_url'] ));
 
 		/* No need to strip tags for sex and show_sex. */
 	
@@ -259,17 +267,18 @@ class Wow_Recruit_Widget extends WP_Widget {
 		global $wrclasskey;
 
 		/* Set up some default widget settings. */
-?>
+
+		?>
 
 		<!-- Widget Title: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'hybrid'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title(optional):', 'hybrid'); ?></label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:390px;" />
 		</p>
 		
 		<!-- Widget Title Url: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title_url' ); ?>"><?php _e('Recruitment Page URL:', 'wow-recruit'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title_url' ); ?>"><?php _e('Recruitment Page URL(optional, if not empty please use full url):', 'wow-recruit'); ?></label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title_url' ); ?>" name="<?php echo $this->get_field_name( 'title_url' ); ?>" value="<?php echo $instance['title_url']; ?>" style="width:390px;" />
 		</p>
 	<?php
@@ -277,7 +286,7 @@ class Wow_Recruit_Widget extends WP_Widget {
 		{
 		?>
 		<div>
-		<img src="<?php echo WP_PLUGIN_URL?>/wow-recruit-widget/images/class-<?php echo $v1?>.png" width="25px" />
+		<img src="<?php echo WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__))?>images/class-<?php echo $v1?>.png" width="25px" />
 		<select id="<?php echo $this->get_field_id( $v1.'_status' ); ?>" name="<?php echo $this->get_field_name( $v1.'_status' ); ?>" class="widefat" style="width:100px;">
 			<?php
 			foreach ($wrstatus as $k2=>$v2)

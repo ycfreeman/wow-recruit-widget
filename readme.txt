@@ -12,7 +12,7 @@ A widget that helps to display recruitment message of a World of Warcraft guild.
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 
-I was building a website for a World of Warcraft guild, and looked at several similar websites that is using wordpress as cms. and find that there is no such widget to display recruitment status available online so I made one myself. I'm not very experienced in writing wordpress plugins so function used may be very basic, but it works. 
+I was building a website for a World of Warcraft guild, and looked at several similar websites that is using wordpress as cms. and find that there is no such widget to display recruitment status available online so I made one myself. I'm not very experienced in writing wordpress plugins so functions used may be very basic, but it works. 
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 

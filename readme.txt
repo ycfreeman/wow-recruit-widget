@@ -14,6 +14,10 @@ A widget that helps to display recruitment message of a World of Warcraft guild.
 
 There is not much WOW guild related plugins for wordpress out there, so I write my own for my guild website project :)
 
+
+* please save the widget once after upgrade to make it work with new codes, 
+* make sure you backup those color codes before upgrade if you have changed them before
+
 New Features in 1.1:
 
 * now it is possible to make multiple entries for same class

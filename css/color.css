@@ -1,0 +1,34 @@
+/*class icon image sprite*/
+img.wr-icon {
+	vertical-align:middle;
+	width: 25px;
+	height:25px;
+	background-image:url(../img/class-sprite.png);
+	}	
+img.wr-deathknight 	{ background-position: 0 0;}
+img.wr-druid 		{ background-position: -25px 0;}
+img.wr-hunter 		{ background-position: -50px 0;}
+img.wr-mage 			{ background-position: -75px 0;}
+img.wr-paladin 		{ background-position: -100px 0;}
+img.wr-priest 		{ background-position: -125px 0;}
+img.wr-rogue 		{ background-position: -150px 0;}
+img.wr-shaman 		{ background-position: -175px 0;}
+img.wr-warlock 		{ background-position: -200px 0;}
+img.wr-warrior 		{ background-position: -225px 0;}
+
+/*status colors, currently using wowprogress.com colors*/
+.wr-High 			{ color:#FF420E; }
+.wr-Medium 			{ color:#FFD320; }
+.wr-Low 			{ color:#1EF1A2; }
+
+/*class colors, currently using wowprogress.com colors*/
+.wr-deathknight 		{ color: #C41F3B; font-size: 10px; }
+.wr-druid 			{ color: #FF7D0A }
+.wr-hunter 			{ color: #ABD473 }
+.wr-mage 			{ color: #69CCF0 }
+.wr-paladin 			{ color: #F58CBA }
+.wr-priest 			{ color: #FFFFFF }
+.wr-rogue 			{ color: #FFF569 }
+.wr-shaman 			{ color: #2459FF }
+.wr-warlock 			{ color: #9482CA }
+.wr-warrior 			{ color: #C79C6E }

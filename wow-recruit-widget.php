@@ -101,13 +101,6 @@ class Wow_Recruit_Widget extends WP_Widget {
 	$title_url = $instance['title_url'] ;
 	
         
-        for ($r = 0; $r < $wr_max_row; $r++)
-        {
-            ${'wr_row_'.$r.'_class'} = $instance['wr_row_'.$r.'_class'];
-            ${'wr_row_'.$r.'_status'} = $instance['wr_row_'.$r.'_status'];
-            ${'wr_row_'.$r.'_note'} = $instance['wr_row_'.$r.'_note'];
-        }
-        
 		
 	/* Before widget (defined by themes). */
 	echo $before_widget;
@@ -129,9 +122,13 @@ class Wow_Recruit_Widget extends WP_Widget {
             }
         }
 
-
+	//prepare for sorting machanism
 	for ($r = 0; $r < $wr_max_row; $r++)
         {
+		    ${'wr_row_'.$r.'_class'} = $instance['wr_row_'.$r.'_class'];
+            ${'wr_row_'.$r.'_status'} = $instance['wr_row_'.$r.'_status'];
+            ${'wr_row_'.$r.'_note'} = $instance['wr_row_'.$r.'_note'];
+			
             if (${'wr_row_'.$r.'_status'}>0)
             {
                 $wr_data[] = array (
@@ -256,7 +253,7 @@ class Wow_Recruit_Widget extends WP_Widget {
                 unset($instance[$k.'_note']);
             }
 
-
+			//updating $instance
             for ($r = 0; $r < $wr_max_row ; $r++)
             {
                 $instance['wr_row_'.$r.'_class'] = $new_instance['wr_row_'.$r.'_class'];

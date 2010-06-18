@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
  * please save the widget once after upgrade to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.1
+ * Version: 1.1.1
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -36,6 +36,11 @@
 add_action( 'widgets_init', 'wow_recruit_load_widgets' );
 wp_enqueue_style('wr_layout','/wp-content/plugins/wow-recruit-widget/css/layout.css');
 wp_enqueue_style('wr_color','/wp-content/plugins/wow-recruit-widget/css/color.css');
+
+/**
+ * no more multiple array for handling these
+ * @since 1.1
+ */
 static $wr_status = array("Closed","Low","Medium","High");
 static $wr_class = array(
     "deathknight"=>"Death Knight",
@@ -140,22 +145,31 @@ class Wow_Recruit_Widget extends WP_Widget {
         }
 
         /**
-         *  Custom status sort function
+         * corrected sort algorithm
          * @param <type> $a
          * @param <type> $b
          * @return <int>
-         * @since 1.1
+         * @since 1.1.1
          */
-        function wr_status_sort($a, $b) {
-                return ($a['status'] == $b['status']) ? 0 : (($a['status'] > $b['status']) ? -1 : 1);
+        if (!function_exists('wr_sort'))
+        {
+            function wr_sort($a, $b) {
+                if ($a['status'] == $b['status'])
+                {
+                    return ($a['class'] == $b['class']) ? 0 : (($a['class'] < $b['class']) ? -1 : 1);
+                }
+                else if (($a['status'] > $b['status']))
+                    return -1;
+                else
+                    return 1;
+            }
         }
-        function wr_class_sort($a, $b) {
-                return ($a['class'] == $b['class']) ? 0 : (($a['class'] > $b['class']) ? -1 : 1);
+                
+        //usort($wr_data,'wr_class_sort' );
+        if ($wr_data)
+        {
+            usort($wr_data,'wr_sort' );
         }
-        
-        usort($wr_data,'wr_class_sort' );
-        usort($wr_data,'wr_status_sort' );
-        
 
 /**
  * Frontend Start
@@ -172,32 +186,35 @@ class Wow_Recruit_Widget extends WP_Widget {
 
     <?php
 
-        foreach ($wr_data as $k =>$v)
+        if ($wr_data)
         {
-            $even;
-            ?>
-            <div class="wr-item wr-<?php echo $even? 'odd': 'even';?>">
-                <div class="wr-left">
-                    <img class="wr-icon wr-<?php echo $v['class']?>"
-                         src="<?php echo WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__))?>img/spacer.gif"
-                         alt="" />
+            foreach ($wr_data as $k =>$v)
+            {
+                $even;
+                ?>
+                <div class="wr-item wr-<?php echo $even? 'odd': 'even';?>">
+                    <div class="wr-left">
+                        <img class="wr-icon wr-<?php echo $v['class']?>"
+                             src="<?php echo WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__))?>img/spacer.gif"
+                             alt="" />
+                    </div>
+                    <div class="wr-right">
+                        <div class="wr-class-text wr-<?php echo $v['class']?>">
+                            <?php echo $wr_class[$v['class']]?>
+                        </div>
+                        <div class="wr-status wr-<?php echo $wr_status[$v['status']]?>">
+                            <?php echo $wr_status[$v['status']]?>
+                        </div>
+                        <div class="wr-note">
+                            <?php echo $v['note']?>
+                        </div>
+                    </div>
                 </div>
-                <div class="wr-right">
-                    <div class="wr-class-text wr-<?php echo $v['class']?>">
-                        <?php echo $wr_class[$v['class']]?>
-                    </div>
-                    <div class="wr-status wr-<?php echo $wr_status[$v['status']]?>">
-                        <?php echo $wr_status[$v['status']]?>
-                    </div>
-                    <div class="wr-note">
-                        <?php echo $v['note']?>
-                    </div>
-                </div>
-            </div>
 
 
-            <?php
-            $even = !$even;
+                <?php
+                $even = !$even;
+            }
         }
 		
 ?>
@@ -370,8 +387,7 @@ class Wow_Recruit_Widget extends WP_Widget {
 	<?php
 		}
 
-                ?>
-            <?php
+
 	}
 }
 

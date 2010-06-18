@@ -192,7 +192,7 @@ class Wow_Recruit_Widget extends WP_Widget {
             {
                 $even;
                 ?>
-                <div class="wr-item wr-<?php echo $even? 'odd': 'even';?>">
+                <div class="wr-item wr-<?php echo $even? 'even': 'odd';?>">
                     <div class="wr-left">
                         <img class="wr-icon wr-<?php echo $v['class']?>"
                              src="<?php echo WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__))?>img/spacer.gif"

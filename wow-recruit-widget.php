@@ -249,11 +249,13 @@ class Wow_Recruit_Widget extends WP_Widget {
              * added simple url validation
              * @since 1.0.1
              */
-            function ValidateURL($url)
+			if (!function_exists('ValidateURL'))
             {
-                return $url ? (preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url)? $url : 'http://'.$url) : '';
-            }
-
+				function ValidateURL($url)
+				{
+					return $url ? (preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url)? $url : 'http://'.$url) : '';
+				}
+			}
 
             $instance = $old_instance;
 

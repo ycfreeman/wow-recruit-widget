@@ -4,7 +4,7 @@ Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
 Tested up to: 3.0
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 
@@ -83,6 +83,9 @@ Unfortunately no, please leave me a comment if you want this feature :).
 = 1.1.1 =
 * fixed a few non-set variable and duplicate function declaration bug
 * fixed sorting mechanism, it should sort by status from high to low, then by class in alphabetical order, tell me if there is still bug
+
+= 1.1.2 =
+* fixed a typing mistake "Huner", lol
 
 == Upgrade Notice ==
 * please save the widget once after upgrade to make it work with new codes, 

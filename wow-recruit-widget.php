@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
  * please save the widget once after upgrade to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -46,7 +46,7 @@ static $wr_class = array(
     "deathknight"=>"Death Knight",
     "druid"=>"Druid",
     "paladin"=>"Paladin",
-    "hunter"=>"Huner",
+    "hunter"=>"Hunter",
     "rogue"=>"Rogue",
     "priest"=>"Priest",
     "shaman"=>"Shaman",

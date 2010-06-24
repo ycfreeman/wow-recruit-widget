@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -41,7 +41,7 @@ wp_enqueue_style('wr_color','/wp-content/plugins/wow-recruit-widget/css/color.cs
  * no more multiple array for handling these
  * @since 1.1
  */
-static $wr_status = array("Closed","Low","Medium","High");
+static $wr_status = array("0"=>"Closed","1"=>"Low","2"=>"Medium","3"=>"High");
 static $wr_class = array(
     "deathknight"=>"Death Knight",
     "druid"=>"Druid",
@@ -344,8 +344,7 @@ class Wow_Recruit_Widget extends WP_Widget {
             <div>
 		<select id="<?php echo $this->get_field_id( 'wr_row_'.$r.'_class' ); ?>"
                         name="<?php echo $this->get_field_name( 'wr_row_'.$r.'_class' ); ?>"
-                        style="width:20%;"
-                        >
+                        style="width:20%;">
                         <?php
                             foreach ($wr_class as $k => $v)
                             {
@@ -362,26 +361,26 @@ class Wow_Recruit_Widget extends WP_Widget {
 
                 <select id="<?php echo $this->get_field_id( 'wr_row_'.$r.'_status' ); ?>"
                         name="<?php echo $this->get_field_name( 'wr_row_'.$r.'_status' ); ?>"
-                        style="width:20%;"
-			<?php
+                        style="width:20%;">
+						<?php
                             foreach ($wr_status as $k=>$v)
                             {
-                            ?>
+                        ?>
                                 <option <?php if ( $k == $instance['wr_row_'.$r.'_status']) echo 'selected="selected"'; ?>
-                                    value="<?php echo $k?>">
-                                    <?php echo $v?>
+                                    value="<?php echo $k;?>">
+                                    <?php echo $v;?>
                                 </option>
 
-                            <?php
+                        <?php
                             }
-			?>
+						?>
 		</select>
 		Note:
                 <input type="text"
                        id="<?php echo $this->get_field_id( 'wr_row_'.$r.'_note' ); ?>"
                        name="<?php echo $this->get_field_name( 'wr_row_'.$r.'_note' ); ?>"
                        value="<?php echo $instance['wr_row_'.$r.'_note']; ?>"
-                       style="width:250px;" />
+                       style="width:50%;" />
 
 		</div>
 		

@@ -3,34 +3,31 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-Tested up to: 3.0
-Stable tag: 1.1.4
+Tested up to: 3.0.1
+Stable tag: 1.2.0
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 
 == Description ==
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
+It works just fine out of the box, but it is very customizable with some CSS techniques.
 
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before
 
-New Features in 1.1:
+New Features in 1.2:
 
-* now it is possible to make multiple entries for same class
-* no more old school table layout, all are recoded with css2 (works on IE8 as well)
-* since there is no more layout codes in the widget itself, custom layout can be done just by editing the css
-* color and layout are seperated into 2 css files
-* data structure is changed, old data will be changed to new structure automatically
-* class icons are combined into css sprite
-* new sorting method used, it should sort by status then class as intended now.
-* row order in widget settings page does not affect order that displays in front, it will just automatically sorts by status then class, I will improve this in later version
+* option to use custom style sheet!
+* fully customizable class / status texts! (yea I don't have much time to hard code multilingual support, so now you can do it all yourself :p)
+* customizable number of rows!
+* added in recruitment message
+* added in a google ad to widget settings for my own good, lol, you can delete that line of code if you really don't like it.
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
 Full description on the blog entry of this plugin:
-
-http://www.ycfreeman.com/2010/06/wow-recruitment-wordpress-widget-11.html
+http://www.ycfreeman.com/search/label/wow-recruit-widget
 
 If you managed to find bugs or want to correct some of my codes, please don't hesitate to leave a comment :)
 
@@ -42,16 +39,17 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Drag 'WOW Recruitment Widget' to your sidebar
 4. Enter details and done!
+5. (optional) go to Settings > WOW Recruit Widget to set up all classes and status texts to your own language
 
 == Frequently Asked Questions ==
 
 = These color/font/size does not match my template, can I change them? =
 
-Yes, just edit layout.css
+Yes, copy all contents in the widget style.css to your theme style.css, then choose "Use Custom Style Sheet" in admin panel
 
 = I don't want the icon class note to layout like that, can I change it? =
 
-Yes, all layouts are done with css, please refer to http://www.ycfreeman.com/2010/06/wow-recruitment-wordpress-widget-11.html for some useful links and examples
+Yes, all layouts are done with css, please refer to the latest plugin URL for some useful links and examples
 
 = Can I sort recruitment messages in another way? =
 
@@ -60,7 +58,6 @@ Unfortunately no, please leave me a comment if you want this feature :).
 == Screenshots ==
 
 1. Here is how it looks (background is from my website, so it may not look exactly same on yours)
-2. Widget Settings
 
 == Changelog ==
 
@@ -89,6 +86,17 @@ Unfortunately no, please leave me a comment if you want this feature :).
 
 = 1.1.4 =
 * fixed a few missed semi-colons, and missing close tags, which may cause bug in certain browsers
+
+= 1.2.0 =
+* major update with new options panel
+* option to use custom style sheet!
+* fully customizable class / status texts!
+* customizable number of rows!
+* added in recruitment message
+* added in a google ad to widget settings for my own good, lol, you can delete that line of code if you really don't like it.
+
+= 1.2.1 =
+* fixed a layout bug
 
 == Upgrade Notice ==
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 

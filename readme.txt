@@ -12,6 +12,7 @@ A widget that helps to display recruitment message of a World of Warcraft guild.
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 It works just fine out of the box, but it is very customizable with some CSS techniques.
+detailed customization tutorial can be found in this post: http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html
 
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before

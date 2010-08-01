@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -98,7 +98,7 @@ if (!function_exists('wow_recruit_widget_install')) {
 if (!function_exists('wow_recruit_widget_uninstall')) {
 
     function wow_recruit_widget_uninstall() {
-        delete_option('wow_recruit');
+        // delete_option('wow_recruit');
     }
 
 }
@@ -248,48 +248,53 @@ class Wow_Recruit_Widget extends WP_Widget {
          * Frontend Start
          */
 ?>
-
-        <div
-
-
-            class="wow-recruit-widget"
-    <?php if ($title_url) {
-    ?>
-            onclick="location.href='<?php echo $title_url; ?>';"
-            style="cursor:pointer;"
-    <?php } ?> >
-        <?php
-        if ($message) {
-        ?>
+        <div class="wr-clear">
+        </div>
+        <div class="wow-recruit-widget"
+<?php if ($title_url) {
+?>
+                 onclick="location.href='<?php echo $title_url; ?>';"
+                 style="cursor:pointer;"
+     <?php } ?> >
+         <?php
+         if ($message) {
+         ?>
         <div class="wr-message">
         <?php echo $message; ?>
-        </div>
+         </div>
     <?php
-        }
+         }
     ?>
-        <div class="wr-container">
+         <div class="wr-container">
 
         <?php
-        if ($wr_data) {
-            foreach ($wr_data as $k => $v) {
-                $even;
+         if ($wr_data) {
+             foreach ($wr_data as $k => $v) {
+                 $even;
         ?>
-                <div class="wr-item wr-<?php echo $even ? 'even' : 'odd'; ?>"
-                     title="<?php echo $wr_class[$v['class']] ?>" >
-                    <div class="wr-left">
-                        <div class="wr-icon wr-<?php echo $v['class'] ?>"
-                             > </div>
-                    </div>
-                    <div class="wr-right">
-                        <div class="wr-class-text wr-<?php echo $v['class'] ?>">
+                 <div class="wr-item wr-<?php echo $even ? 'even' : 'odd'; ?> wr-<?php echo strtolower(str_replace(" ", "", $v['note'])); ?>"
+                      title="<?php echo $wr_class[$v['class']] ?>" >
+                     <div class="wr-left">
+                         <div class="wr-icon wr-<?php echo $v['class'] ?>"
+                              > </div>
+                     </div>
+                     <div class="wr-right">
+                         <div class="wr-class-text wr-<?php echo $v['class'] ?>">
                     <?php echo $wr_class[$v['class']] ?>
                 </div>
-                <div class="wr-status wr-status<?php echo $v['status'] ?>">
+                <?php
+                    if ($v['note']) {
+                ?>
+                        <div class="wr-note wr-<?php echo strtolower(str_replace(" ", "", $v['note'])); ?>">
+                    <?php echo $v['note'] ?>
+                    </div>
+                <?php
+                    }
+                ?>
+                    <div class="wr-status wr-status<?php echo $v['status'] ?>">
                     <?php echo $wr_status[$v['status']] ?>
                 </div>
-                <div class="wr-note">
-                    <?php echo $v['note'] ?>
-                </div>
+
             </div>
         </div>
 
@@ -477,40 +482,40 @@ class Wow_Recruit_Widget extends WP_Widget {
                     <select id="<?php echo $this->get_field_id('wr_row_' . $r . '_class'); ?>"
                             name="<?php echo $this->get_field_name('wr_row_' . $r . '_class'); ?>"
                             style="width:20%;">
-<?php
+                <?php
                 foreach ($wr_class as $k => $v) {
-?>
-                            <option <?php if ($k == $instance['wr_row_' . $r . '_class'])
+                ?>
+            <option <?php if ($k == $instance['wr_row_' . $r . '_class'])
                         echo 'selected="selected"'; ?>
-                value="<?php echo $k; ?>">
-<?php echo $v; ?>
+                        value="<?php echo $k; ?>">
+                <?php echo $v; ?>
             </option>
-<?php
+        <?php
                 }
-?>
+        ?>
 
-    </select>
+            </select>
 
-    <select id="<?php echo $this->get_field_id('wr_row_' . $r . '_status'); ?>"
+            <select id="<?php echo $this->get_field_id('wr_row_' . $r . '_status'); ?>"
                     name="<?php echo $this->get_field_name('wr_row_' . $r . '_status'); ?>"
                     style="width:20%;">
-<?php
+                <?php
                 foreach ($wr_status as $k => $v) {
-?>
-                    <option <?php if ($k == $instance['wr_row_' . $r . '_status'])
+                ?>
+            <option <?php if ($k == $instance['wr_row_' . $r . '_status'])
                         echo 'selected="selected"'; ?>
-                value="<?php echo $k; ?>">
-<?php echo $v; ?>
+                        value="<?php echo $k; ?>">
+                <?php echo $v; ?>
             </option>
 
-                <?php
+        <?php
                 }
-                ?>
-    </select>
-                                                                                                                                                                                                                                                                                                                                        		Note:
-    <input type="text"
-           id="<?php echo $this->get_field_id('wr_row_' . $r . '_note'); ?>"
-                   name="<?php echo $this->get_field_name('wr_row_' . $r . '_note'); ?>"
+        ?>
+            </select>
+                                                                                                                                                                                                                                                                                                                                                                		Note:
+            <input type="text"
+                   id="<?php echo $this->get_field_id('wr_row_' . $r . '_note'); ?>"
+                       name="<?php echo $this->get_field_name('wr_row_' . $r . '_note'); ?>"
                        value="<?php echo $instance['wr_row_' . $r . '_note']; ?>"
                        style="width:50%;" />
 

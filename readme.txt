@@ -12,24 +12,22 @@ A widget that helps to display recruitment message of a World of Warcraft guild.
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 It works just fine out of the box, but it is very customizable with some CSS techniques.
-Customization tutorial: http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html
-
+[Customization tutorial can be found here](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
 
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before
 
-New Features in 1.2:
+**New Features in 1.2:**
 
 * option to use custom style sheet!
-* fully customizable class / status texts! (yea I don't have much time to hard code multilingual support, so now you can do it all yourself :p)
+* fully customizable class / status texts! *(yea I don't have much time to hard code multilingual support, so now you can do it all yourself :p)*
 * customizable number of rows!
 * added in recruitment message
 * added in a google ad to widget settings for my own good, lol, you can delete that line of code if you really don't like it.
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
-Full description on the web page of this plugin:
-http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html
+[Full description on the web page of this plugin](http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html)
 
 If you managed to find bugs or want to correct some of my codes, please don't hesitate to leave a comment :)
 
@@ -38,26 +36,27 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 == Installation ==
 
 1. Unpack and Upload all files to the `/wp-content/plugins/wow-recruit-widget` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Drag 'WOW Recruitment Widget' to your sidebar
+2. Activate the plugin through the **Plugins** menu in WordPress
+3. Drag **WOW Recruitment Widget** to your sidebar
 4. Enter details and done!
-5. (optional) go to Settings > WOW Recruit Widget to set up all classes and status texts to your own language
+5. *(optional)* go to **Settings > WOW Recruit Widget** to set up all classes and status texts to your own language
 
 == Frequently Asked Questions ==
 
 = These color/font/size does not match my template, can I change them? =
 
 Yes, copy all contents in the widget style.css to your theme style.css, then choose "Use Custom Style Sheet" in admin panel, and remember to point .wr-icon sprite to a correct image,
-i.e. if you want to use the default image sprite, change .wr-icon > background-image to url(../../plugins/wow-recruit-widget/img/class-sprite.png)
-detailed customization tutorial can be found in this post: http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html
+i.e. if you want to use the default image sprite, change .wr-icon > background-image to `url(../../plugins/wow-recruit-widget/img/class-sprite.png)` or using absolute link
+`url(http://your site's url/wp-content/plugins/wow-recruit-widget/img/class-sprite.png)`
+[detailed customization tutorial can be found in this post](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
 
-= I don't want the icon class note to layout like that, can I change it? =
+= I don't want the icon/class/note to layout like that, can I change it? =
 
-Yes, all layouts are done with css, please refer to the latest plugin URL for some useful links and examples
+Yes, all layouts are done with css, please refer to the [customizaton tutorial](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
 
 = Can I sort recruitment messages in another way? =
 
-Unfortunately no, please leave me a comment if you want this feature :).
+Unfortunately it is not implemented, please leave me a comment if you really want this feature :).
 
 == Screenshots ==
 
@@ -93,7 +92,7 @@ Unfortunately no, please leave me a comment if you want this feature :).
 
 = 1.2.0 =
 * major update with new options panel
-* option to use custom style sheet!
+* option to use custom style sheet! and it is recombined back to one css
 * fully customizable class / status texts!
 * customizable number of rows!
 * added in recruitment message

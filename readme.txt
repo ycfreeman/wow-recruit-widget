@@ -28,8 +28,8 @@ New Features in 1.2:
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
-Full description on the blog entry of this plugin:
-http://www.ycfreeman.com/search/label/wow-recruit-widget
+Full description on the web page of this plugin:
+http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html
 
 If you managed to find bugs or want to correct some of my codes, please don't hesitate to leave a comment :)
 

@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -285,7 +285,7 @@ class Wow_Recruit_Widget extends WP_Widget {
                 <?php
                     if ($v['note']) {
                 ?>
-                        <div class="wr-note wr-<?php echo strtolower(str_replace(" ", "", $v['note'])); ?>">
+                        <div class="wr-note wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9\s]/", "", $v['note'])); ?>">
                     <?php echo $v['note'] ?>
                     </div>
                 <?php

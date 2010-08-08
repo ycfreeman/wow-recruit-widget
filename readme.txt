@@ -113,7 +113,7 @@ Unfortunately it is not implemented, please leave me a comment if you really wan
 * added a "help" icon that links to this plugin's new home page
 
 = 1.2.5 =
-* there was a SVN mess up for previous 2 version, I think i've recovered everything and this version should work properly
+* there was a SVN mess up for previous 2 updates, I've recovered everything and this update should work properly
 
 == Upgrade Notice ==
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 

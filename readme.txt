@@ -47,7 +47,7 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 
 Yes, copy all contents in the widget style.css to your theme style.css, then choose "Use Custom Style Sheet" in admin panel, and remember to point .wr-icon sprite to a correct image,
 i.e. if you want to use the default image sprite, change .wr-icon > background-image to `url(../../plugins/wow-recruit-widget/img/class-sprite.png)` or using absolute link
-`url(http://your site's url/wp-content/plugins/wow-recruit-widget/img/class-sprite.png)`
+`url(http://your-site-url/wp-content/plugins/wow-recruit-widget/img/class-sprite.png)`
 [detailed customization tutorial can be found in this post](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
 
 = I don't want the icon/class/note to layout like that, can I change it? =

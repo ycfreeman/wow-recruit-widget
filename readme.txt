@@ -63,32 +63,22 @@ Unfortunately it is not implemented, please leave me a comment if you really wan
 1. Here is how it looks (background is from my website, so it may not look exactly same on yours)
 
 == Changelog ==
+= 1.2.5 =
+* there was some subversion mess up for previous 2 updates, I've recovered everything and this update should work properly
 
-= 1.0 =
-* First released version
+= 1.2.4 =
+* fixed another issue about new generated wr-note class name, and a default style bug, also updated readme file
+* removed google ad (sorry I was doing it wrong!)
+* added a "help" icon that links to this plugin's new home page
 
-= 1.0.1 = 
-* minor changes to path handling, added some simple URL validation, and some descriptions in widget
+= 1.2.3 =
+* fixed a very minor potential issue about new generated wr-note class name, and a minor default style bug
 
-= 1.1 =
-* major recode to everything including data structure
-* no more table layout, all replaced by div, which can be easily customized by editing css/layout.css
-* color and layout are seperated into css/layout.css and css/color.css
-* class icons are combined into css sprite
-* new sorting method used, it should sort by status then class as intended now
+= 1.2.2 =
+* fixed another layout bug
 
-= 1.1.1 =
-* fixed a few non-set variable and duplicate function declaration bug
-* fixed sorting mechanism, it should sort by status from high to low, then by class in alphabetical order, tell me if there is still bug
-
-= 1.1.2 =
-* fixed a typing mistake "Huner", lol
-
-= 1.1.3 =
-* fixed a layout bug that may cause by css float
-
-= 1.1.4 =
-* fixed a few missed semi-colons, and missing close tags, which may cause bug in certain browsers
+= 1.2.1 =
+* fixed a layout bug
 
 = 1.2.0 =
 * major update with new options panel
@@ -98,22 +88,32 @@ Unfortunately it is not implemented, please leave me a comment if you really wan
 * added in recruitment message
 * added in a help icon
 
-= 1.2.1 =
-* fixed a layout bug
+= 1.1.4 =
+* fixed a few missed semi-colons, and missing close tags, which may cause bug in certain browsers
 
-= 1.2.2 =
-* fixed another layout bug
+= 1.1.3 =
+* fixed a layout bug that may cause by css float
 
-= 1.2.3 =
-* fixed a very minor potential issue about new generated wr-note class name, and a minor default style bug
+= 1.1.2 =
+* fixed a typing mistake "Huner", lol
 
-= 1.2.4 =
-* fixed another issue about new generated wr-note class name, and a default style bug, also updated readme file
-* removed google ad (sorry I was doing it wrong!)
-* added a "help" icon that links to this plugin's new home page
+= 1.1.1 =
+* fixed a few non-set variable and duplicate function declaration bug
+* fixed sorting mechanism, it should sort by status from high to low, then by class in alphabetical order, tell me if there is still bug
 
-= 1.2.5 =
-* there was a SVN mess up for previous 2 updates, I've recovered everything and this update should work properly
+= 1.1 =
+* major recode to everything including data structure
+* no more table layout, all replaced by div, which can be easily customized by editing css/layout.css
+* color and layout are seperated into css/layout.css and css/color.css
+* class icons are combined into css sprite
+* new sorting method used, it should sort by status then class as intended now
+
+= 1.0.1 = 
+* minor changes to path handling, added some simple URL validation, and some descriptions in widget
+
+= 1.0 =
+* First released version
+
 
 == Upgrade Notice ==
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 

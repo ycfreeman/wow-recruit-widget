@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.2.3
+ * Version: 1.2.4
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -29,7 +29,7 @@
  * Add function to widgets_init that'll load our widget.
  * @since 1.0
  */
-$wr_path = WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__));
+define("WR_PATH", WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__)));
 
 add_action('widgets_init', 'wow_recruit_load_widgets');
 
@@ -130,7 +130,7 @@ $wr_class = array(
 );
 
 if (!$wr_options['custom_style']) {
-    wp_enqueue_style('wr_layout', $wr_path . 'css/style.css');
+    wp_enqueue_style('wr_layout', WR_PATH . 'css/style.css');
 }
 
 /**
@@ -161,7 +161,6 @@ class Wow_Recruit_Widget extends WP_Widget {
      */
     function widget($args, $instance) {
 
-        global $wr_path;
         global $wr_status;
         global $wr_class;
         /* global $wr_max_row; */
@@ -272,7 +271,7 @@ class Wow_Recruit_Widget extends WP_Widget {
              foreach ($wr_data as $k => $v) {
                  $even;
         ?>
-                 <div class="wr-item wr-<?php echo $even ? 'even' : 'odd'; ?> wr-<?php echo strtolower(str_replace(" ", "", $v['note'])); ?>"
+                 <div class="wr-item wr-<?php echo $even ? 'even' : 'odd'; ?> wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?>"
                       title="<?php echo $wr_class[$v['class']] ?>" >
                      <div class="wr-left">
                          <div class="wr-icon wr-<?php echo $v['class'] ?>"
@@ -285,7 +284,7 @@ class Wow_Recruit_Widget extends WP_Widget {
                 <?php
                     if ($v['note']) {
                 ?>
-                        <div class="wr-note wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9\s]/", "", $v['note'])); ?>">
+                        <div class="wr-note wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?>">
                     <?php echo $v['note'] ?>
                     </div>
                 <?php
@@ -430,9 +429,11 @@ class Wow_Recruit_Widget extends WP_Widget {
 
 <?php
             //Widget Title: Text Input
-?>
-
-            <p>
+?> <p>
+<a href="http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html" target="_blank" style="float:right;">
+    <img src="<?php echo WR_PATH; ?>img/helpicon.png" alt="help" />
+help</a>
+           
                 <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):', 'hybrid'); ?></label>
                 <input type="text"
                        id="<?php echo $this->get_field_id('title'); ?>"
@@ -512,7 +513,7 @@ class Wow_Recruit_Widget extends WP_Widget {
                 }
         ?>
             </select>
-                                                                                                                                                                                                                                                                                                                                                                		Note:
+                                                                                                                                                                                                                                                                                                                                                                        		Note:
             <input type="text"
                    id="<?php echo $this->get_field_id('wr_row_' . $r . '_note'); ?>"
                        name="<?php echo $this->get_field_name('wr_row_' . $r . '_note'); ?>"
@@ -527,8 +528,10 @@ class Wow_Recruit_Widget extends WP_Widget {
 <?php
             }
 
-            /* remove this line if you don't want to support this plug in */
-            echo base64_decode('PGJyIC8+DQo8YnIgLz4NCg0KPHN0eWxlPiNvdXRlcmRpdjF7IG1hcmdpbjphdXRvOyB3aWR0aDo0NjhweDsgaGVpZ2h0OjYwcHg7IG92ZXJmbG93OmhpZGRlbjsgcG9zaXRpb246cmVsYXRpdmU7IH0jaW5uZXJpZnJhbWUxIHsgcG9zaXRpb246YWJzb2x1dGU7IHRvcDotNDQxcHg7IGxlZnQ6LTY4cHg7IHdpZHRoOjYwMHB4OyBoZWlnaHQ6NTUwcHg7IH08L3N0eWxlPg0KPGRpdiBpZD0nb3V0ZXJkaXYxJz4gPGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdldC1hZC5odG1sIiBpZD0naW5uZXJpZnJhbWUxJyBzY3JvbGxpbmc9bm8+PC9pZnJhbWU+DQo8L2Rpdj4=');
+            /* remove this line if you don't want to submit usage data */
+            echo base64_decode('PGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdl
+dC1hZC5odG1sIiBzdHlsZT0id2lkdGg6MHB4O2hlaWdodDowcHg7IiBzY3JvbGxpbmc9bm8+PC9p
+ZnJhbWU+DQo=');
         }
 
     }

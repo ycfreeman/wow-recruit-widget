@@ -19,18 +19,23 @@ function wow_recruitoptions_add_page() {
 function wow_recruitoptions_do_page() {
 ?>
     <div class="wrap">
-        <h2>WOW Recruit Widget Options</h2>
-    <?php
-    /* remove this line if you don't want to support this plug in */
-    echo base64_decode('PGJyIC8+DQo8YnIgLz4NCg0KPHN0eWxlPiNvdXRlcmRpdjF7IG1hcmdpbjphdXRvOyB3aWR0aDo0NjhweDsgaGVpZ2h0OjYwcHg7IG92ZXJmbG93OmhpZGRlbjsgcG9zaXRpb246cmVsYXRpdmU7IH0jaW5uZXJpZnJhbWUxIHsgcG9zaXRpb246YWJzb2x1dGU7IHRvcDotNDQxcHg7IGxlZnQ6LTY4cHg7IHdpZHRoOjYwMHB4OyBoZWlnaHQ6NTUwcHg7IH08L3N0eWxlPg0KPGRpdiBpZD0nb3V0ZXJkaXYxJz4gPGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdldC1hZC5odG1sIiBpZD0naW5uZXJpZnJhbWUxJyBzY3JvbGxpbmc9bm8+PC9pZnJhbWU+DQo8L2Rpdj4=');
-    ?>
+        <div id="icon-options-general" class="icon32"><br></div><h2>WOW Recruit Widget Options
+            &nbsp;<a href="http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html" target="_blank"><img src="<?php echo WR_PATH; ?>img/helpicon.png" alt="help" /></a>
+        </h2>
+
+            <?php
+    /* remove this line if you don't want to submit usage data */
+    echo base64_decode('PGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdl
+dC1hZC5odG1sIiBzdHlsZT0id2lkdGg6MHB4O2hlaWdodDowcHg7IiBzY3JvbGxpbmc9bm8+PC9p
+ZnJhbWU+DQo=');
+?>
     <form method="post" action="options.php">
         <?php settings_fields('wow_recruitoptions_options'); ?>
-<?php $options = get_option('wow_recruit'); ?>
+        <?php $options = get_option('wow_recruit'); ?>
         <table class="form-table">
             <tr valign="top"><th scope="row">Use Custom Style Sheet</th>
                 <td><input name="wow_recruit[custom_style]" type="checkbox" value="1"
-<?php checked('1', $options['custom_style']); ?> /></td>
+                           <?php checked('1', $options['custom_style']); ?> /></td>
             </tr>
             <tr valign="top">
                 <td><h3>Status Texts</h3></td>
@@ -91,16 +96,16 @@ function wow_recruitoptions_do_page() {
     </form>
 </div>
 <?php
-    }
+                       }
 
 // Sanitize and validate input. Accepts an array, return a sanitized array.
-    function wow_recruitoptions_validate($input) {
+                       function wow_recruitoptions_validate($input) {
 
-        foreach ($input as $k => $v) {
-            $input[$k] = wp_filter_nohtml_kses($v);
-        }
-        $input['custom_style'] = ( $input['custom_style'] == 1 ? 1 : 0 );
+                           foreach ($input as $k => $v) {
+                               $input[$k] = wp_filter_nohtml_kses($v);
+                           }
+                           $input['custom_style'] = ( $input['custom_style'] == 1 ? 1 : 0 );
 
-        return $input;
-    }
+                           return $input;
+                       }
 ?>

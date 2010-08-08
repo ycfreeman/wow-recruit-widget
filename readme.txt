@@ -4,7 +4,7 @@ Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 
@@ -111,6 +111,9 @@ Unfortunately it is not implemented, please leave me a comment if you really wan
 * fixed another issue about new generated wr-note class name, and a default style bug, also updated readme file
 * removed google ad (sorry I was doing it wrong!)
 * added a "help" icon that links to this plugin's new home page
+
+= 1.2.5 =
+* there was a SVN mess up for previous 2 version, I think i've recovered everything and this version should work properly
 
 == Upgrade Notice ==
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 

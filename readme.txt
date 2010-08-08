@@ -43,20 +43,7 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 
 == Frequently Asked Questions ==
 
-= These color/font/size does not match my template, can I change them? =
-
-Yes, copy all contents in the widget style.css to your theme style.css, then choose "Use Custom Style Sheet" in admin panel, and remember to point .wr-icon sprite to a correct image,
-i.e. if you want to use the default image sprite, change .wr-icon > background-image to `url(../../plugins/wow-recruit-widget/img/class-sprite.png)` or using absolute link
-`url(http://your-site-url/wp-content/plugins/wow-recruit-widget/img/class-sprite.png)`
-[detailed customization tutorial can be found in this post](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
-
-= I don't want the icon/class/note to layout like that, can I change it? =
-
-Yes, all layouts are done with css, please refer to the [customizaton tutorial](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
-
-= Can I sort recruitment messages in another way? =
-
-Unfortunately it is not implemented, please leave me a comment if you really want this feature :).
+[Full description on the web page of this plugin](http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html)
 
 == Screenshots ==
 
@@ -86,7 +73,6 @@ Unfortunately it is not implemented, please leave me a comment if you really wan
 * fully customizable class / status texts!
 * customizable number of rows!
 * added in recruitment message
-* added in a help icon
 
 = 1.1.4 =
 * fixed a few missed semi-colons, and missing close tags, which may cause bug in certain browsers

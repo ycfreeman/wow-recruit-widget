@@ -75,6 +75,7 @@
     width:175px;
     height:30px;
     padding:5px 0px;
+
 }
 .wr-odd {}
 .wr-even {}
@@ -90,6 +91,7 @@
     float:left;
     height:30px;
     width:145px;
+        position:relative;
 }
 
 
@@ -103,13 +105,15 @@
 }
 .wr-status {
     display:block;
-    float:left;
+    float:right;
     margin-left:5px;
-    height:15px;
-    line-height:15px;
+
     width:55px;
 }
 .wr-note {
+    position:absolute;
+    left:0px;
+    top:15px;
     display:block;
     font-weight:normal;
     font-style:italic;

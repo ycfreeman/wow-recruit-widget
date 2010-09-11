@@ -18,6 +18,7 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
 
 New Features in 1.3:
+
 * Customizable tooltip! opens up even more layout possibilities
 * Bug report icon which links to the latest blog post of current version
 * Able to display "Closed" status! (not in a very smart way, so be careful while using it)

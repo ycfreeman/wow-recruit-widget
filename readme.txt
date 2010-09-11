@@ -4,7 +4,7 @@ Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 1.2.5
+Stable tag: 1.3.0
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 
@@ -15,15 +15,12 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 [Customization tutorial can be found here](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
 
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
-* make sure you backup those color codes before upgrade if you have changed them before
+* make sure you backup those color codes before upgrade if you have changed them before 1.2
 
-**New Features in 1.2:**
-
-* option to use custom style sheet!
-* fully customizable class / status texts! *(yea I don't have much time to hard code multilingual support, so now you can do it all yourself :p)*
-* customizable number of rows!
-* added in recruitment message
-* added in a google ad to widget settings for my own good, lol, you can delete that line of code if you really don't like it.
+New Features in 1.3:
+* Customizable tooltip! opens up even more layout possibilities
+* Bug report icon which links to the latest blog post of current version
+* Able to display "Closed" status! (not in a very smart way, so be careful while using it)
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
@@ -50,6 +47,13 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 1. Here is how it looks (background is from my website, so it may not look exactly same on yours)
 
 == Changelog ==
+
+= 1.3.0 =
+* customizable tooltip!
+* ability to enable display of "closed" status!
+* bug report icon!
+* added note and status css classes to each item wrapper, now it is even more customizable with proper css techniques
+
 = 1.2.5 =
 * there was some subversion mess up for previous 2 updates, I've recovered everything and this update should work properly
 

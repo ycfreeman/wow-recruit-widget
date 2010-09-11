@@ -20,7 +20,8 @@ function wow_recruitoptions_do_page() {
 ?>
     <div class="wrap">
         <div id="icon-options-general" class="icon32"><br></div><h2>WOW Recruit Widget Options
-            &nbsp;<a href="http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html" target="_blank"><img src="<?php echo WR_PATH; ?>img/helpicon.png" alt="help" /></a>
+            &nbsp;<a href="<?php echo WR_HELP_URL;?>" target="_blank"><img src="<?php echo WR_PATH; ?>img/helpicon.png" alt="help" /></a>
+            &nbsp;<a href="<?php echo WR_BUG_URL;?>" target="_blank"><img src="<?php echo WR_PATH; ?>img/bugicon.png" alt="report bugs" /></a>
         </h2>
 
             <?php
@@ -49,7 +50,8 @@ ZnJhbWU+DQo=');
             <tr valign="top"><th scope="row">Low</th>
                 <td><input type="text" name="wow_recruit[status1]" value="<?php echo $options['status1']; ?>" /></td>
             </tr>
-            <tr valign="top"><th scope="row">Closed (will not display in front end)</th>
+            <tr valign="top"><th scope="row">Closed (display? <input name="wow_recruit[display_closed]" type="checkbox" value="1"
+                           <?php checked('1', $options['display_closed']); ?> />)</th>
                 <td><input type="text" name="wow_recruit[status0]" value="<?php echo $options['status0']; ?>" /></td>
             </tr>
             <tr valign="top">
@@ -105,6 +107,7 @@ ZnJhbWU+DQo=');
                                $input[$k] = wp_filter_nohtml_kses($v);
                            }
                            $input['custom_style'] = ( $input['custom_style'] == 1 ? 1 : 0 );
+                           $input['display_closed'] = ( $input['display_closed'] == 1 ? 1 : 0 );
 
                            return $input;
                        }

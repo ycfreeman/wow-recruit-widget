@@ -151,7 +151,7 @@
 .wr-status1			{ color:#1EF1A2; }
 
 /*class colors, currently using wowprogress.com colors*/
-.wr-deathknight 		{ color: #C41F3B; font-size: 90%; }
+.wr-deathknight .wr-class-text	{ color: #C41F3B; letter-spacing:-1px; }
 .wr-druid 			{ color: #FF7D0A; }
 .wr-hunter 			{ color: #ABD473; }
 .wr-mage 			{ color: #69CCF0; }

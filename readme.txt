@@ -4,7 +4,7 @@ Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
 
@@ -18,7 +18,6 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
 
 New Features in 1.3:
-
 * Customizable tooltip! opens up even more layout possibilities
 * Bug report icon which links to the latest blog post of current version
 * Able to display "Closed" status! (not in a very smart way, so be careful while using it)
@@ -48,6 +47,9 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 1. Here is how it looks (background is from my website, so it may not look exactly same on yours)
 
 == Changelog ==
+
+= 1.3.1 =
+* changed help/bug icons to host at external source, updated license wordings
 
 = 1.3.0 =
 * customizable tooltip!

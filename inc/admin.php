@@ -20,16 +20,16 @@ function wow_recruitoptions_do_page() {
 ?>
     <div class="wrap">
         <div id="icon-options-general" class="icon32"><br></div><h2>WOW Recruit Widget Options
-            &nbsp;<a href="<?php echo WR_HELP_URL;?>" target="_blank"><img src="<?php echo WR_PATH; ?>img/helpicon.png" alt="help" /></a>
-            &nbsp;<a href="<?php echo WR_BUG_URL;?>" target="_blank"><img src="<?php echo WR_PATH; ?>img/bugicon.png" alt="report bugs" /></a>
+            &nbsp;<a href="<?php echo WR_HELP_URL; ?>" target="_blank"><img src="<?php echo YCFREEMAN_HELP_ICON_URL; ?>" alt="view more info" /></a>
+            &nbsp;<a href="<?php echo WR_BUG_URL; ?>" target="_blank"><img src="<?php echo YCFREEMAN_BUG_ICON_URL; ?>" alt="report bugs" /></a>
         </h2>
 
-            <?php
+    <?php
     /* remove this line if you don't want to submit usage data */
     echo base64_decode('PGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdl
 dC1hZC5odG1sIiBzdHlsZT0id2lkdGg6MHB4O2hlaWdodDowcHg7IiBzY3JvbGxpbmc9bm8+PC9p
 ZnJhbWU+DQo=');
-?>
+    ?>
     <form method="post" action="options.php">
         <?php settings_fields('wow_recruitoptions_options'); ?>
         <?php $options = get_option('wow_recruit'); ?>
@@ -51,7 +51,7 @@ ZnJhbWU+DQo=');
                 <td><input type="text" name="wow_recruit[status1]" value="<?php echo $options['status1']; ?>" /></td>
             </tr>
             <tr valign="top"><th scope="row">Closed (display? <input name="wow_recruit[display_closed]" type="checkbox" value="1"
-                           <?php checked('1', $options['display_closed']); ?> />)</th>
+                                                                     <?php checked('1', $options['display_closed']); ?> />)</th>
                 <td><input type="text" name="wow_recruit[status0]" value="<?php echo $options['status0']; ?>" /></td>
             </tr>
             <tr valign="top">
@@ -98,17 +98,17 @@ ZnJhbWU+DQo=');
     </form>
 </div>
 <?php
-                       }
+     }
 
 // Sanitize and validate input. Accepts an array, return a sanitized array.
-                       function wow_recruitoptions_validate($input) {
+     function wow_recruitoptions_validate($input) {
 
-                           foreach ($input as $k => $v) {
-                               $input[$k] = wp_filter_nohtml_kses($v);
-                           }
-                           $input['custom_style'] = ( $input['custom_style'] == 1 ? 1 : 0 );
-                           $input['display_closed'] = ( $input['display_closed'] == 1 ? 1 : 0 );
+         foreach ($input as $k => $v) {
+             $input[$k] = wp_filter_nohtml_kses($v);
+         }
+         $input['custom_style'] = ( $input['custom_style'] == 1 ? 1 : 0 );
+         $input['display_closed'] = ( $input['display_closed'] == 1 ? 1 : 0 );
 
-                           return $input;
-                       }
+         return $input;
+     }
 ?>

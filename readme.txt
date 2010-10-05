@@ -82,16 +82,16 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 * added in recruitment message
 
 = 1.1.4 =
-* fixed a few missed semi-colons, and missing close tags, which may cause bug in certain browsers
+* fixed a lovely IE only bug caused a few missed semi-colons, and missing close tags, which may cause bug in certain browsers, thanks KGBAgent again
 
 = 1.1.3 =
 * fixed a layout bug that may cause by css float
 
 = 1.1.2 =
-* fixed a typing mistake "Huner", lol
+* fixed a typing mistake "Huner", lol, thanks KGBAgent
 
 = 1.1.1 =
-* fixed a few non-set variable and duplicate function declaration bug
+* fixed a few non-set variable and duplicate function declaration bug, thanks Ramides
 * fixed sorting mechanism, it should sort by status from high to low, then by class in alphabetical order, tell me if there is still bug
 
 = 1.1 =

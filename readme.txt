@@ -6,7 +6,7 @@ Requires at least: 2.8
 Tested up to: 3.0.1
 Stable tag: 1.3.1
 
-A widget that helps to display recruitment message of a World of Warcraft guild.
+A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
 
 == Description ==
 

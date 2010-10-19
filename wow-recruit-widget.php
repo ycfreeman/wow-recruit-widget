@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WOW Recruitment Widget
  * Plugin URI: http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html
- * Description: A widget that helps to display recruitment message of a World of Warcraft guild.
+ * Description: A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that has different classes.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
  * Version: 1.3.1

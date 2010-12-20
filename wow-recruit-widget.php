@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WOW Recruitment Widget
- * Plugin URI: http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html
+ * Plugin URI: http://www.ycfreeman.com/wow-recruitment-widget
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -28,8 +28,8 @@
 /**
  * group help and bug report url as well as icons url to top for easier maintainence
  */
-define("WR_HELP_URL", "http://www.ycfreeman.com/p/wow-recruitment-wordpress-widget.html");
-define("WR_BUG_URL", "http://www.ycfreeman.com/2010/09/wow-recruitment-wordpress-widget-13.html");
+define("WR_HELP_URL", "http://www.ycfreeman.com/wow-recruitment-widget");
+define("WR_BUG_URL", "http://www.ycfreeman.com/forum/support-wrw");
 
 define("YCFREEMAN_BUG_ICON_URL","http://img835.imageshack.us/img835/4069/bugicon.png");
 define("YCFREEMAN_HELP_ICON_URL","http://img827.imageshack.us/img827/5806/helpiconn.png");

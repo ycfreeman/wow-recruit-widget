@@ -28,8 +28,8 @@
 /**
  * group help and bug report url as well as icons url to top for easier maintainence
  */
-define("WR_HELP_URL", "http://www.ycfreeman.com/wow-recruitment-widget");
-define("WR_BUG_URL", "http://www.ycfreeman.com/forum/support-wrw");
+define("WR_HELP_URL", "http://ycfreeman.com/wow-recruitment-widget");
+define("WR_BUG_URL", "http://ycfreeman.com/forum/support-wrw");
 
 define("YCFREEMAN_BUG_ICON_URL","http://img835.imageshack.us/img835/4069/bugicon.png");
 define("YCFREEMAN_HELP_ICON_URL","http://img827.imageshack.us/img827/5806/helpiconn.png");

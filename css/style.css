@@ -1,3 +1,12 @@
+/**
+ * Plugin Name: WOW Recruitment Widget
+ * Plugin URI: http://www.ycfreeman.com/wow-recruitment-widget
+ * Description: Stylesheet for WOW recruitment widget
+ * Version: 1.4.0
+ * Author: Freeman Man
+ * Author URI: http://www.ycfreeman.com
+ */
+
 /*widget layout css*/
 .wr-clear {
     float:none;
@@ -5,55 +14,55 @@
 }
 
 /**
-	WOW Recruit Widget Layout Stylesheet
+        WOW Recruit Widget Layout Stylesheet
 
-	Use the CSS rules below to modify the look of your widget.
+        Use the CSS rules below to modify the look of your widget.
 
-	To create additional rules, use the markup below as a guide to WOW Recruit Widget's Layout architecture.
+        To create additional rules, use the markup below as a guide to WOW Recruit Widget's Layout architecture.
 
-	<div class="wow-recruit-widget">
-		<ul class="wr-container">
-			<li class="wr-item wr-odd">
-				<div class="wr-left">
-					<img class="wr-icon" src="images/class-shaman.png" />
-				</div>
-				<div class="wr-right">
-					<div class="wr-class-text wr-shaman">
-						Shaman
-					</div>
-					<div class="wr-status wr-high">
-						High
-					</div>
-					<div class="wr-note">
-						Note: Enhancement
-					</div>
-				</div>
-			</li>
-			<li class="wr-item wr-even">
-				<div class="wr-left">
-					<img class="wr-icon" src="images/class-shaman.png" />
-				</div>
-				<div class="wr-right">
-					<div class="wr-class-text wr-shaman">
-						Shaman
-					</div>
-					<div class="wr-status wr-medium">
-						Medium
-					</div>
-					<div class="wr-note">
-						Note: Restoration
-					</div>
-				</div>
-			</li>
-		</ul>
-	<div>
+        <div class="wow-recruit-widget">
+                <ul class="wr-container">
+                        <li class="wr-item wr-odd">
+                                <div class="wr-left">
+                                        <img class="wr-icon" src="images/class-shaman.png" />
+                                </div>
+                                <div class="wr-right">
+                                        <div class="wr-class-text wr-shaman">
+                                                Shaman
+                                        </div>
+                                        <div class="wr-status wr-high">
+                                                High
+                                        </div>
+                                        <div class="wr-note">
+                                                Note: Enhancement
+                                        </div>
+                                </div>
+                        </li>
+                        <li class="wr-item wr-even">
+                                <div class="wr-left">
+                                        <img class="wr-icon" src="images/class-shaman.png" />
+                                </div>
+                                <div class="wr-right">
+                                        <div class="wr-class-text wr-shaman">
+                                                Shaman
+                                        </div>
+                                        <div class="wr-status wr-medium">
+                                                Medium
+                                        </div>
+                                        <div class="wr-note">
+                                                Note: Restoration
+                                        </div>
+                                </div>
+                        </li>
+                </ul>
+        <div>
 */
 
 /*widget font settings*/
 .wow-recruit-widget {
-    
+
     /*font-family:verdana,arial,sans-serif;*/
-   
+
     width:100%;
 }
 
@@ -72,26 +81,23 @@
 .wr-item {
     display:block;
     float:left;
-    width:175px;
-    height:30px;
     padding:5px 0px;
-
+    overflow:hidden;
 }
 .wr-odd {}
 .wr-even {}
 .wr-left {
     display:block;
     float: left;
-    width: 25px;
-    height: 30px;
+    width: 23%;
+    height: 40px;
     text-align:center;
 }
 .wr-right {
     display:block;
-    float:left;
-    height:30px;
-    width:145px;
-        position:relative;
+    float:right;
+    width:77%;
+    position:relative;
 }
 
 
@@ -99,29 +105,20 @@
     display:block;
     float:left;
     margin-left:5px;
-    height:15px;
-    line-height:15px;
-    width:80px;
+
 }
 .wr-status {
     display:block;
-    float:right;
-    margin-left:5px;
-
-    width:55px;
+    margin-right:15px;
+    text-align:right;
 }
 .wr-note {
-    position:absolute;
-    left:0px;
-    top:15px;
+    margin:5px 0 0 5px;
+    clear:both;
     display:block;
     font-weight:normal;
     font-style:italic;
     color:#cee683;
-    line-height:15px;
-    height:15px;
-    margin-left:5px;
-    width:85%;
 }
 
 
@@ -130,20 +127,24 @@
 /*class icon image sprite*/
 .wr-icon {
     vertical-align:middle;
-    width: 25px;
-    height:25px;
-    background-image:url(../img/class-sprite.png);
+    width: 36px;
+    height:36px;
+    background-image:url(../img/class-sprite.jpg);
+    border-radius:4px;
+    box-shadow: 0 0 3px #000, inset 0 0 5px #ddd;
+    border:1px solid #aaa;
 }	
 .wr-deathknight 	{ background-position: 0 0;}
-.wr-druid 		{ background-position: -25px 0;}
-.wr-hunter 		{ background-position: -50px 0;}
-.wr-mage 		{ background-position: -75px 0;}
-.wr-paladin 		{ background-position: -100px 0;}
-.wr-priest 		{ background-position: -125px 0;}
-.wr-rogue 		{ background-position: -150px 0;}
-.wr-shaman 		{ background-position: -175px 0;}
-.wr-warlock 		{ background-position: -200px 0;}
-.wr-warrior 		{ background-position: -225px 0;}
+.wr-druid 		{ background-position: -36px 0;}
+.wr-hunter 		{ background-position: -72px 0;}
+.wr-mage 		{ background-position: -108px 0;}
+.wr-paladin 		{ background-position: -144px 0;}
+.wr-priest 		{ background-position: -180px 0;}
+.wr-rogue 		{ background-position: -216px 0;}
+.wr-shaman 		{ background-position: -252px 0;}
+.wr-warlock 		{ background-position: -288px 0;}
+.wr-warrior 		{ background-position: -324px 0;}
+.wr-monk 		{ background-position: -360px 0;}
 
 /*status colors, currently using wowprogress.com colors*/
 .wr-status3 			{ color:#FF420E; }
@@ -161,3 +162,4 @@
 .wr-shaman 			{ color: #2459FF; }
 .wr-warlock 			{ color: #9482CA; }
 .wr-warrior 			{ color: #C79C6E; }
+.wr-monk 			{ color: #008080; }

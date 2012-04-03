@@ -3,8 +3,8 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-Tested up to: 3.0.3
-Stable tag: 1.3.2
+Tested up to: 3.3.1
+Stable tag: 1.4.0
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
 
@@ -17,17 +17,21 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
 
-New Features in 1.3:
-* Customizable tooltip! opens up even more layout possibilities
-* Bug report icon which links to the latest blog post of current version
-* Able to display "Closed" status! (not in a very smart way, so be careful while using it)
+New Features in 1.4:
+* added monk class
+* slightly larger icons
+* few update to stylesheet, now uses float instead of absolute position, also with icon chrome in css3
+* added item width to widget(.wr-item), you can use !important in your stylesheet to override it
+
+** This will be the last major update of version 1.x, next update will be version 2 and will feature major recode, please check 
+[my website](http://www.ycfreeman.com) for updates.
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
 
 [Demo](http://wrdemo.ycfreeman.com/)
 [Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
-[For bugs please go to support forum](http://www.ycfreeman.com/forum/support-wrw)
+[For bugs please leave a comment](http://www.ycfreeman.com/wow-recruitment-widget)
 
 
 If you managed to find bugs or want to correct some of my codes, please don't hesitate to leave a comment :)
@@ -51,6 +55,12 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 1. Here is how it looks (background is from my website, so it may not look exactly same on yours)
 
 == Changelog ==
+
+= 1.4.0 =
+* added monk class
+* larger icons
+* few updates to stylesheet, now uses float instead of absolute position, also with icon chrome in css3
+* added item width to widget(.wr-item), you can use !important in your stylesheet to override it
 
 = 1.3.2 =
 * changed bug report link and readme file

@@ -5,12 +5,12 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.3.2
+ * Version: 1.4.0
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
 /**
- * Copyright (C) 2010  Freeman, (Yu Chung) Man (email : ycfreeman@yahoo.com.hk)
+ * Copyright (C) 2012  Freeman, (Yu Chung) Man (email : freeman@ycfreeman.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,10 +29,10 @@
  * group help and bug report url as well as icons url to top for easier maintainence
  */
 define("WR_HELP_URL", "http://ycfreeman.com/wow-recruitment-widget");
-define("WR_BUG_URL", "http://ycfreeman.com/forum/support-wrw");
+define("WR_BUG_URL", "http://ycfreeman.com/wow-recruitment-widget");
 
-define("YCFREEMAN_BUG_ICON_URL","http://img835.imageshack.us/img835/4069/bugicon.png");
-define("YCFREEMAN_HELP_ICON_URL","http://img827.imageshack.us/img827/5806/helpiconn.png");
+define("YCFREEMAN_BUG_ICON_URL", "http://img835.imageshack.us/img835/4069/bugicon.png");
+define("YCFREEMAN_HELP_ICON_URL", "http://img827.imageshack.us/img827/5806/helpiconn.png");
 
 /**
  * bulletproof plugin path handling
@@ -78,6 +78,8 @@ if (!function_exists('wow_recruit_widget_install')) {
             'class7' => 'Mage',
             'class8' => 'Warlock',
             'class9' => 'Warrior',
+            'class10' => 'Monk',
+            
             'status0' => 'Closed',
             'status1' => 'Low',
             'status2' => 'Medium',
@@ -120,7 +122,8 @@ $wr_class = array(
     'shaman' => $wr_options['class6'],
     'mage' => $wr_options['class7'],
     'warlock' => $wr_options['class8'],
-    'warrior' => $wr_options['class9']
+    'warrior' => $wr_options['class9'],
+    'monk' => $wr_options['class10'],
 );
 
 if (!$wr_options['custom_style']) {
@@ -172,7 +175,10 @@ class Wow_Recruit_Widget extends WP_Widget {
         /* add in a title url */
         $title_url = $instance['title_url'];
 
-
+        /* settable width
+         * @since 1.4
+         */
+        $wr_width = $instance['wr_width'];
         /* recruitment message
          * @since 1.2
          */
@@ -200,10 +206,10 @@ class Wow_Recruit_Widget extends WP_Widget {
         if ($title) {
             if ($title_url) {
                 echo $before_title;
-?>
+                ?>
 
                 <a href="<?php echo $title_url; ?>"><?php echo $title; ?> </a>
-<?php
+                <?php
                 echo $after_title;
             } else {
                 echo $before_title . $title . $after_title;
@@ -264,33 +270,33 @@ class Wow_Recruit_Widget extends WP_Widget {
         /**
          * Frontend Start
          */
-?>
+        ?>
         <div class="wr-clear">
         </div>
         <div class="wow-recruit-widget"
-<?php if ($title_url) {
-?>
+        <?php if ($title_url) {
+            ?>
                  onclick="location.href='<?php echo $title_url; ?>';"
                  style="cursor:pointer;"
-<?php } ?> >
-     <?php
-        if ($message) {
-     ?>
-       <div class="wr-message">
-<?php echo $message; ?>
-       </div>
-<?php
-        }
-?>
-        <div class="wr-container">
+             <?php } ?> >
+                 <?php
+                 if ($message) {
+                     ?>
+                <div class="wr-message">
+                    <?php echo $message; ?>
+                </div>
+                <?php
+            }
+            ?>
+            <div class="wr-container">
 
-<?php
-        if ($wr_data) {
-            foreach ($wr_data as $k => $v) {
-                $even;
-?>
-                <div class="wr-item wr-<?php echo $even ? 'even' : 'odd'; ?> wr-<?php echo $v['class']; ?> wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?> wr-status<?php echo $v['status']; ?>"
-                     title="<?php
+                <?php
+                if ($wr_data) {
+                    foreach ($wr_data as $k => $v) {
+                        $even;
+                        ?>
+                        <div class="wr-item wr-<?php echo $even ? 'even' : 'odd'; ?> wr-<?php echo $v['class']; ?> wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?> wr-status<?php echo $v['status']; ?>"
+                             title="<?php
                 /**
                  * advanced tooltip
                  * @since 1.3                       *
@@ -300,57 +306,58 @@ class Wow_Recruit_Widget extends WP_Widget {
                 $tooltiptemp = str_replace("[status]", $wr_status[$v['status']], $tooltiptemp);
                 $tooltiptemp = str_replace("[note]", $v['note'], $tooltiptemp);
                 echo $tooltiptemp;
-?>" >
-               <div class="wr-left">
-                   <div class="wr-icon wr-<?php echo $v['class'] ?>"
-                        > </div>
-               </div>
-               <div class="wr-right">
-                   <div class="wr-class-text wr-<?php echo $v['class'] ?>">
-<?php echo $wr_class[$v['class']] ?>
-                   </div>
-<?php
-                if ($v['note']) {
-?>
-                    <div class="wr-note wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?>">
-<?php echo $v['note'] ?>
-                    </div>
-<?php
-                }
-?>
-                <div class="wr-status wr-status<?php echo $v['status'] ?>">
-<?php echo $wr_status[$v['status']] ?>
-                </div>
+                        ?>" style="width:<?php echo $wr_width; ?>" >
+                            <div class="wr-left">
+                                <div class="wr-icon wr-<?php echo $v['class'] ?>"
+                                     > </div>
+                            </div>
+                            <div class="wr-right">
+                                <div class="wr-class-text wr-<?php echo $v['class'] ?>">
+                                    <?php echo $wr_class[$v['class']] ?>
+                                </div>
+                                <div class="wr-status wr-status<?php echo $v['status'] ?>">
+                                    <?php echo $wr_status[$v['status']] ?>
+                                </div>
+                                <?php
+                                if ($v['note']) {
+                                    ?>
+                                    <div class="wr-note wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?>">
+                                        <?php echo $v['note'] ?>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
 
+
+                            </div>
+                        </div>
+
+
+                        <?php
+                        $even = !$even;
+                    }
+                }
+                ?>
+
+
+            </div>
+            <div class="wr-clear">
             </div>
         </div>
 
 
-<?php
-                $even = !$even;
-            }
-        }
-?>
-
-
-    </div>
-    <div class="wr-clear">
-    </div>
-</div>
 
 
 
-
-
-<?php
+        <?php
         /**
          *  Frontend End
          */
         /* After widget (defined by themes). */
         echo $after_widget;
-?>
+        ?>
 
-<?php
+        <?php
     }
 
     /**
@@ -391,6 +398,11 @@ class Wow_Recruit_Widget extends WP_Widget {
          * @since 1.3
          */
         $instance['wr_tooltip'] = $new_instance['wr_tooltip'];
+        
+        /* item width
+         * @since 1.4
+         */
+        $instance['wr_width'] = $new_instance['wr_width'];
 
         /* no tag striping to support inline style if needed, hope it wont break
          * @since 1.2
@@ -434,7 +446,7 @@ class Wow_Recruit_Widget extends WP_Widget {
         global $wr_class;
         /* global $wr_max_row; */
 
-        $defaults = array('wr_max_row' => '15', 'wr_tooltip' => '[class]');
+        $defaults = array('wr_max_row' => '15', 'wr_tooltip' => '[class]', 'wr_width'=>'100%');
         $instance = wp_parse_args((array) $instance, $defaults);
 
 
@@ -458,12 +470,12 @@ class Wow_Recruit_Widget extends WP_Widget {
                 $r++;
             }
         }
-?>
+        ?>
 
 
-<?php
+        <?php
         //Widget Title: Text Input
-?>          <div style="float:right;">
+        ?>          <div style="float:right;">
             <a href="<?php echo WR_HELP_URL; ?>" target="_blank" >
                 <img src="<?php echo YCFREEMAN_HELP_ICON_URL; ?>" title="view more info" alt="view more info" />
             </a>
@@ -479,9 +491,9 @@ class Wow_Recruit_Widget extends WP_Widget {
                    value="<?php echo $instance['title']; ?>"
                    style="width:100%;" />
         </p>
-<?php
+        <?php
         //Widget Title URL: Text Input
-?>
+        ?>
         <p>
             <label for="<?php echo $this->get_field_id('title_url'); ?>"><?php _e('Recruitment Page URL (optional, if not empty please use full url):', 'wow-recruit'); ?></label>
             <input type="text"
@@ -491,9 +503,9 @@ class Wow_Recruit_Widget extends WP_Widget {
                    style="width:100%;" />
         </p>
 
-<?php
+        <?php
         //Widget Recruitment Message: Text Input
-?>
+        ?>
         <p>
             <label for="<?php echo $this->get_field_id('message'); ?>"><?php _e('Recruitment Message (optional)', 'wow-recruit'); ?></label>
             <textarea rows="3" cols="1"
@@ -501,9 +513,9 @@ class Wow_Recruit_Widget extends WP_Widget {
                       name="<?php echo $this->get_field_name('message'); ?>"
                       style="width:100%;"><?php echo $instance['message']; ?> </textarea>
         </p>
-<?php
+        <?php
         //Widget rows: Text Input
-?>
+        ?>
         <p>
 
 
@@ -515,70 +527,93 @@ class Wow_Recruit_Widget extends WP_Widget {
                    style="width:10%;" />&nbsp;&nbsp;
 
 
-<?php
-        /**
-         * customize tooltip
-         * @since 1.3
-         */
-?>
+                    
+            <?php
+            /**
+             * customize item width
+             * @since 1.4
+             */
+            ?>
 
-        <label for="<?php echo $this->get_field_id('wr_tooltip'); ?>"><?php _e('Tooltip pattern:', 'wow-recruit'); ?></label>
-        <input type="text"
-               id="<?php echo $this->get_field_id('wr_tooltip'); ?>"
-               name="<?php echo $this->get_field_name('wr_tooltip'); ?>"
-               value="<?php echo $instance['wr_tooltip']; ?>"
-               style="width:50%;" />
+            <label for="<?php echo $this->get_field_id('wr_width'); ?>"><?php _e('Item width:', 'wow-recruit'); ?></label>
+            <input type="text"
+                   id="<?php echo $this->get_field_id('wr_width'); ?>"
+                   name="<?php echo $this->get_field_name('wr_width'); ?>"
+                   value="<?php echo $instance['wr_width']; ?>"
+                   style="width:50%;" />
+
+    
 
 
+        </p>
+        <p>
+                    
+            <?php
+            /**
+             * customize tooltip
+             * @since 1.3
+             */
+            ?>
 
-    </p>
-<?php
+            <label for="<?php echo $this->get_field_id('wr_tooltip'); ?>"><?php _e('Tooltip pattern:', 'wow-recruit'); ?></label>
+            <input type="text"
+                   id="<?php echo $this->get_field_id('wr_tooltip'); ?>"
+                   name="<?php echo $this->get_field_name('wr_tooltip'); ?>"
+                   value="<?php echo $instance['wr_tooltip']; ?>"
+                   style="width:50%;" />
+
+        </p>
+        <?php
         for ($r = 0; $r < $wr_max_row; $r++) {
-?>
+            ?>
             <div>
                 <select id="<?php echo $this->get_field_id('wr_row_' . $r . '_class'); ?>"
                         name="<?php echo $this->get_field_name('wr_row_' . $r . '_class'); ?>"
                         style="width:20%;">
-<?php
-            foreach ($wr_class as $k => $v) {
-?>
-        <option <?php if ($k == $instance['wr_row_' . $r . '_class'])
-                    echo 'selected="selected"'; ?>
-            value="<?php echo $k; ?>">
-<?php echo $v; ?>
-                </option>
-<?php
-            }
-?>
+                            <?php
+                            foreach ($wr_class as $k => $v) {
+                                ?>
+                        <option <?php
+                if ($k == $instance['wr_row_' . $r . '_class'])
+                    echo 'selected="selected"';
+                                ?>
+                            value="<?php echo $k; ?>">
+                                <?php echo $v; ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
 
-        </select>
+                </select>
 
-        <select id="<?php echo $this->get_field_id('wr_row_' . $r . '_status'); ?>"
-                name="<?php echo $this->get_field_name('wr_row_' . $r . '_status'); ?>"
-                style="width:20%;">
-<?php
-            foreach ($wr_status as $k => $v) {
-?>
-        <option <?php if ($k == $instance['wr_row_' . $r . '_status'])
-                    echo 'selected="selected"'; ?>
-            value="<?php echo $k; ?>">
-<?php echo $v; ?>
-                </option>
+                <select id="<?php echo $this->get_field_id('wr_row_' . $r . '_status'); ?>"
+                        name="<?php echo $this->get_field_name('wr_row_' . $r . '_status'); ?>"
+                        style="width:20%;">
+                            <?php
+                            foreach ($wr_status as $k => $v) {
+                                ?>
+                        <option <?php
+                if ($k == $instance['wr_row_' . $r . '_status'])
+                    echo 'selected="selected"';
+                                ?>
+                            value="<?php echo $k; ?>">
+                                <?php echo $v; ?>
+                        </option>
 
-<?php
-            }
-?>
-        </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                         		Note:
-        <input type="text"
-               id="<?php echo $this->get_field_id('wr_row_' . $r . '_note'); ?>"
-                   name="<?php echo $this->get_field_name('wr_row_' . $r . '_note'); ?>"
-                   value="<?php echo $instance['wr_row_' . $r . '_note']; ?>"
-                   style="width:50%;" />
+                        <?php
+                    }
+                    ?>
+                </select>
+                Note:
+                <input type="text"
+                       id="<?php echo $this->get_field_id('wr_row_' . $r . '_note'); ?>"
+                       name="<?php echo $this->get_field_name('wr_row_' . $r . '_note'); ?>"
+                       value="<?php echo $instance['wr_row_' . $r . '_note']; ?>"
+                       style="width:50%;" />
 
-        </div>
+            </div>
 
-<?php
+            <?php
         }
 
         /* remove this line if you don't want to submit usage data */
@@ -591,7 +626,7 @@ ZnJhbWU+DQo=');
 
 /**/
 
-if (is_admin ()) {
+if (is_admin()) {
     include 'inc/admin.php';
 }
 ?>

@@ -18,13 +18,15 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
 
 New Features in 1.4:
+
 * added monk class
 * slightly larger icons
-* few update to stylesheet, now uses float instead of absolute position, also with icon chrome in css3
+* few updates to default stylesheet, now uses float instead of absolute position, also with icon chrome in css3
+* moved div.wr-icon to middle to accompany new stylesheet changes
 * added item width to widget(.wr-item), you can use !important in your stylesheet to override it
 
-** This will be the last major update of version 1.x, next update will be version 2 and will feature major recode, please check 
-[my website](http://www.ycfreeman.com) for updates.
+** *This will be the last major update of version 1.x, next update will be version 2 and will feature major recode, please check 
+[my website](http://www.ycfreeman.com) for updates.*
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
@@ -60,6 +62,7 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 * added monk class
 * larger icons
 * few updates to stylesheet, now uses float instead of absolute position, also with icon chrome in css3
+* moved div.wr-icon to middle to accompany new stylesheet
 * added item width to widget(.wr-item), you can use !important in your stylesheet to override it
 
 = 1.3.2 =

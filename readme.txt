@@ -22,8 +22,8 @@ New Features in 1.4:
 * added monk class
 * slightly larger icons
 * few updates to default stylesheet, now uses float instead of absolute position, also with icon chrome in css3
-* moved div.wr-status to middle of div.wr-class-text and div.wr-note to accompany the stylesheet changes
-* added item width to widget(.wr-item), you can use !important in your stylesheet to override it
+* minor change to markup to accompany the stylesheet changes
+* added item width to widget, you can use !important in your stylesheet to override it
 
 ** *This will be the last major update of version 1.x, next update will be version 2 and will feature major recode, please check 
 [my website](http://www.ycfreeman.com) for updates.*
@@ -62,7 +62,7 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 * added monk class
 * larger icons
 * few updates to stylesheet, now uses float instead of absolute position, also with icon chrome in css3
-* moved div.wr-icon to middle to accompany new stylesheet
+* moved div.wr-status to middle of div.wr-class-text and div.wr-note to accompany new stylesheet
 * added item width to widget(.wr-item), you can use !important in your stylesheet to override it
 
 = 1.3.2 =

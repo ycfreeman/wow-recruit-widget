@@ -25,7 +25,7 @@ New Features in 1.4:
 * minor change to markup to accompany the stylesheet changes
 * added item width to widget, you can use !important in your stylesheet to override it
 
-** if "Monk" is not appearing on the list, go to Settings -> WOW Recruit Widget and do a "Save Changes"
+** if "Monk" is not appearing on the list, go to Settings -> WOW Recruit Widget, check if "Monk" is there and do a "Save Changes"
 
 ** *This will be the last major update of version 1.x, next update will be version 2 and will feature major recode, please check 
 [my website](http://www.ycfreeman.com) for updates.*

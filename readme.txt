@@ -4,7 +4,7 @@ Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
 
@@ -17,6 +17,11 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
 
+New in 1.4.1:
+
+* due to demand (some themes have very narrow side bar that new bigger icon doesn't fit) simple theme support is added,
+simply go to Settings > WOW Recruit Widget, under Theme, choose "For Narrow Sidebars"
+
 New Features in 1.4:
 
 * added monk class
@@ -24,6 +29,7 @@ New Features in 1.4:
 * few updates to default stylesheet, now uses float instead of absolute position, also with icon chrome in css3
 * minor change to markup to accompany the stylesheet changes
 * added item width to widget, you can use !important in your stylesheet to override it
+
 
 ** if "Monk" is not appearing on the list, go to Settings -> WOW Recruit Widget, check if "Monk" is there and do a "Save Changes"
 
@@ -49,6 +55,7 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 3. Drag **WOW Recruitment Widget** to your sidebar
 4. Enter details and done!
 5. *(optional)* go to **Settings > WOW Recruit Widget** to set up all classes and status texts to your own language
+6. *(optional)* if you're using a theme with narrow sidebar, go to **Settings > WOW Recruit Widget** and choose "For Narrow Sidebars" under "Theme"
 
 == Frequently Asked Questions ==
 
@@ -59,6 +66,9 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 1. Here is how it looks (background is from my website, so it may not look exactly same on yours)
 
 == Changelog ==
+
+= 1.4.1 =
+* added theme for narrow sidebar themes
 
 = 1.4.0 =
 * added monk class

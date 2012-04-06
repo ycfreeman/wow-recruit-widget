@@ -34,9 +34,38 @@ ZnJhbWU+DQo=');
             <?php settings_fields('wow_recruitoptions_options'); ?>
             <?php $options = get_option('wow_recruit'); ?>
             <table class="form-table">
-                <tr valign="top"><th scope="row">Use Custom Style Sheet</th>
+                <tr valign="top">
+                    <th scope="row">Use Custom Style Sheet</th>
                     <td><input name="wow_recruit[custom_style]" type="checkbox" value="1"
                                <?php checked('1', $options['custom_style']); ?> /></td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Theme</th>
+                    <td>
+                        <?php
+                        /**
+                         * simple theme support
+                         * @since 1.4.1 
+                         */
+                        $themes = array(
+                            "Plugin Default" => "",
+                            "For Narrow Sidebars" => "small",
+                        );
+                        ?>
+
+                        <select name="wow_recruit[theme]">
+                            <?php
+                            foreach ($themes as $option => $value) {
+                                ?>
+                                <option value="<?php echo $value ?>" 
+                                        <?php echo ($options['theme'] == $value) ? 'selected="selected"' : '' ?>>
+                                            <?php echo $option; ?>
+                                </option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+
                 </tr>
                 <tr valign="top">
                     <td><h3>Status Texts</h3></td>

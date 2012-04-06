@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.4.0
+ * Version: 1.4.1
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -79,7 +79,6 @@ if (!function_exists('wow_recruit_widget_install')) {
             'class8' => 'Warlock',
             'class9' => 'Warrior',
             'class10' => 'Monk',
-            
             'status0' => 'Closed',
             'status1' => 'Low',
             'status2' => 'Medium',
@@ -127,7 +126,11 @@ $wr_class = array(
 );
 
 if (!$wr_options['custom_style']) {
-    wp_enqueue_style('wr_layout', WR_PATH . 'css/style.css');
+    /**
+     * added simple theme support
+     * @since 1.4.1 
+     */
+    wp_enqueue_style('wr_layout', WR_PATH . 'css/style' . (($wr_options['theme']!='') ? '-' . $wr_options['theme'] : '') . '.css');
 }
 
 /**
@@ -398,7 +401,7 @@ class Wow_Recruit_Widget extends WP_Widget {
          * @since 1.3
          */
         $instance['wr_tooltip'] = $new_instance['wr_tooltip'];
-        
+
         /* item width
          * @since 1.4
          */
@@ -446,7 +449,7 @@ class Wow_Recruit_Widget extends WP_Widget {
         global $wr_class;
         /* global $wr_max_row; */
 
-        $defaults = array('wr_max_row' => '15', 'wr_tooltip' => '[class]', 'wr_width'=>'100%');
+        $defaults = array('wr_max_row' => '15', 'wr_tooltip' => '[class]', 'wr_width' => '100%');
         $instance = wp_parse_args((array) $instance, $defaults);
 
 
@@ -527,7 +530,7 @@ class Wow_Recruit_Widget extends WP_Widget {
                    style="width:10%;" />&nbsp;&nbsp;
 
 
-                    
+
             <?php
             /**
              * customize item width
@@ -542,12 +545,12 @@ class Wow_Recruit_Widget extends WP_Widget {
                    value="<?php echo $instance['wr_width']; ?>"
                    style="width:50%;" />
 
-    
+
 
 
         </p>
         <p>
-                    
+
             <?php
             /**
              * customize tooltip

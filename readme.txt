@@ -19,7 +19,7 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 
 New in 1.4.1:
 
-* due to popular demand (there are still many themes out there have very narrow side bar that the new bigger icon doesn't fit) simple theme support is added,
+* due to popular demand (there are still many themes out there have very narrow side bar that the new bigger icons don't fit) simple theme support is added,
 simply go to Settings > WOW Recruit Widget, under Theme, choose "For Narrow Sidebars"
 
 New Features in 1.4:

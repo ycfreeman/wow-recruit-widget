@@ -30,12 +30,7 @@ function wow_recruitoptions_do_page() {
 			src="<?php echo YCFREEMAN_BUG_ICON_URL; ?>" alt="report bugs" /> </a>
 	</h2>
 
-	<?php
-	/* remove this line if you don't want to submit usage data */
-	echo base64_decode('PGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdl
-			dC1hZC5odG1sIiBzdHlsZT0id2lkdGg6MHB4O2hlaWdodDowcHg7IiBzY3JvbGxpbmc9bm8+PC9p
-			ZnJhbWU+DQo=');
-	?>
+
 	<form method="post" action="options.php">
 		<?php settings_fields('wow_recruitoptions_options'); ?>
 		<?php $options = get_option('wow_recruit'); ?>

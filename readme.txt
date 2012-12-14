@@ -44,20 +44,9 @@ To use this widget, simply go to Appearance => Widget and drag it to a sidebar a
 
 
 [Demo](http://wrdemo.ycfreeman.com/)
-<<<<<<< HEAD
  [Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
  [Issue Tracker on github](https://github.com/ycfreeman/wow-recruit-widget/issues)
  [Codebase](https://github.com/ycfreeman/wow-recruit-widget)
-<<<<<<< HEAD
-
-
-=======
->>>>>>> update readme.txt
-=======
-[Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
-[For bugs please leave a comment](http://www.ycfreeman.com/wow-recruitment-widget)
-
->>>>>>> Revert "update readme.txt"
 
 If you managed to find bugs or want to correct some of my codes, please don't hesitate to leave a comment :)
 

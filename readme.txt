@@ -44,8 +44,6 @@ To use this widget, simply go to Appearance => Widget and drag it to a sidebar a
  [Issue Tracker on github](https://github.com/ycfreeman/wow-recruit-widget/issues)
  [Codebase](https://github.com/ycfreeman/wow-recruit-widget)
 
-
-
 If you managed to find bugs or want to correct some of my codes, please don't hesitate to leave a comment :)
 
 

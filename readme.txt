@@ -3,7 +3,7 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-Tested up to: 3.4.2
+Tested up to: 3.5.x
 Stable tag: 1.4.1
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
@@ -33,7 +33,7 @@ New Features in 1.4:
 
 ** if "Monk" is not appearing on the list, go to Settings -> WOW Recruit Widget, fill in the box next to "Monk" and "Save Changes"
 
-** *This will be the last major update of version 1.x, next update will be version 2 and will feature major recode, please check 
+** *This will be the last major update of version 1.x, there may be a version 2, please check 
 [my website](http://www.ycfreeman.com) for updates.*
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.

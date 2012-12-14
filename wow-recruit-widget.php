@@ -37,14 +37,14 @@ define("YCFREEMAN_HELP_ICON_URL", "http://img827.imageshack.us/img827/5806/helpi
 /**
  * bulletproof plugin path handling
  * @since 1.3
-*/
+ */
 define("WR_PATH", WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__)));
 
 
 /**
  * Add function to widgets_init that'll load our widget.
  * @since 1.0
-*/
+ */
 add_action('widgets_init', 'wow_recruit_load_widgets');
 
 /**
@@ -52,7 +52,7 @@ add_action('widgets_init', 'wow_recruit_load_widgets');
  * 'Example_Widget' is the widget class used below.
  *
  * @since 1.0
-*/
+ */
 function wow_recruit_load_widgets() {
 	register_widget('Wow_Recruit_Widget');
 }
@@ -84,7 +84,7 @@ if (!function_exists('wow_recruit_widget_install')) {
 				'status2' => 'Medium',
 				'status3' => 'High',
 				'custom_style'=> false,
-				'theme'=>'',
+				'theme'=>false,
 				'display_closed'=>false,
 
 
@@ -98,7 +98,7 @@ if (!function_exists('wow_recruit_widget_install')) {
 if (!function_exists('wow_recruit_widget_uninstall')) {
 
 	function wow_recruit_widget_uninstall() {
-		// delete_option('wow_recruit');
+		delete_option('wow_recruit');
 	}
 
 }
@@ -143,9 +143,8 @@ if (!$wr_options['custom_style']) {
 
 	if (!function_exists('wow_recruit_widget_enqueue_styles')) {
 		function wow_recruit_widget_enqueue_styles(){
-			if (isset($wr_options['theme'])) {
-				wp_enqueue_style('wr_layout', WR_PATH . 'css/style' . (($wr_options['theme']!='') ? '-' . $wr_options['theme'] : '') . '.css');
-			}
+			$wr_options = get_option('wow_recruit');
+			wp_enqueue_style('wr_layout', WR_PATH . 'css/style' . (($wr_options['theme']!='') ? '-' . $wr_options['theme'] : '') . '.css');
 		}
 	}
 
@@ -158,7 +157,6 @@ if (!$wr_options['custom_style']) {
 
 
 $wr_display_closed = $wr_options['display_closed'];
-
 /**
  * WOW Recruitment Widget class.
  * This class handles everything that needs to be handled with the widget:
@@ -236,76 +234,76 @@ class Wow_Recruit_Widget extends WP_Widget {
 <?php
 echo $after_title;
 			} else {
-                echo $before_title . $title . $after_title;
-            }
+				echo $before_title . $title . $after_title;
+			}
 		}
 
 		//prepare for sorting machanim
 		for ($r = 0; $r < $wr_max_row; $r++) {
-            ${
-'wr_row_' . $r . '_class'} = $instance['wr_row_' . $r . '_class'];
-            ${
-'wr_row_' . $r . '_status'} = $instance['wr_row_' . $r . '_status'];
-            ${
-'wr_row_' . $r . '_note'} = $instance['wr_row_' . $r . '_note'];
+			${
+				'wr_row_' . $r . '_class'} = $instance['wr_row_' . $r . '_class'];
+				${
+					'wr_row_' . $r . '_status'} = $instance['wr_row_' . $r . '_status'];
+					${
+						'wr_row_' . $r . '_note'} = $instance['wr_row_' . $r . '_note'];
 
-            if ($wr_display_closed) {
-                if (${
-'wr_row_' . $r . '_status'} > -1) {
-                    $wr_data[] = array(
-                        'status' => ${
-'wr_row_' . $r . '_status'},
-                        'class' => ${
-'wr_row_' . $r . '_class'},
-                        'note' => ${
-'wr_row_' . $r . '_note'}
-                    );
-                }
-            } else {
+						if ($wr_display_closed) {
+							if (${
+								'wr_row_' . $r . '_status'} > -1) {
+								$wr_data[] = array(
+										'status' => ${
+										'wr_row_' . $r . '_status'},
+										'class' => ${
+										'wr_row_' . $r . '_class'},
+										'note' => ${
+										'wr_row_' . $r . '_note'}
+								);
+							}
+						} else {
 
-                if (${
-'wr_row_' . $r . '_status'} > 0) {
-                    $wr_data[] = array(
-                        'status' => ${
-'wr_row_' . $r . '_status'},
-                        'class' => ${
-'wr_row_' . $r . '_class'},
-                        'note' => ${
-'wr_row_' . $r . '_note'}
-                    );
-                }
-            }
-        }
+							if (${
+								'wr_row_' . $r . '_status'} > 0) {
+								$wr_data[] = array(
+										'status' => ${
+										'wr_row_' . $r . '_status'},
+										'class' => ${
+										'wr_row_' . $r . '_class'},
+										'note' => ${
+										'wr_row_' . $r . '_note'}
+								);
+							}
+						}
+		}
 
-        /**
-         * corrected sort algorithm
-         * @param <type> $a
-         * @param <type> $b
-         * @return <int>
-         * @since 1.1.1
-         */
-        if (!function_exists('wr_sort')) {
+		/**
+		 * corrected sort algorithm
+		 * @param <type> $a
+		 * @param <type> $b
+		 * @return <int>
+		 * @since 1.1.1
+		 */
+		if (!function_exists('wr_sort')) {
 
-            function wr_sort($a, $b) {
-                if ($a['status'] == $b['status']) {
-                    return ($a['class'] == $b['class']) ? 0 : (($a['class'] < $b['class']) ? -1 : 1);
-                } else if (($a['status'] > $b['status']))
-                	return -1;
-                else
-                	return 1;
-            }
+			function wr_sort($a, $b) {
+				if ($a['status'] == $b['status']) {
+					return ($a['class'] == $b['class']) ? 0 : (($a['class'] < $b['class']) ? -1 : 1);
+				} else if (($a['status'] > $b['status']))
+					return -1;
+				else
+					return 1;
+			}
 
-        }
+		}
 
-        //usort($wr_data,'wr_class_sort' );
-        if ($wr_data) {
-            usort($wr_data, 'wr_sort');
-        }
+		//usort($wr_data,'wr_class_sort' );
+		if ($wr_data) {
+			usort($wr_data, 'wr_sort');
+		}
 
-        /**
-         * Frontend Start
-         */
-        ?>
+		/**
+		 * Frontend Start
+		 */
+		?>
 <div class="wr-clear"></div>
 <div class="wow-recruit-widget" <?php if ($title_url) {
 	?>
@@ -313,20 +311,20 @@ echo $after_title;
 	style="cursor: pointer;" <?php } ?>>
 	<?php
 	if ($message) {
-                     ?>
+		?>
 	<div class="wr-message">
 		<?php echo $message; ?>
 	</div>
 	<?php
-            }
-            ?>
+	}
+	?>
 	<div class="wr-container">
 
 		<?php
 		if ($wr_data) {
-                    foreach ($wr_data as $k => $v) {
-                        $even;
-                        ?>
+			foreach ($wr_data as $k => $v) {
+				$even;
+				?>
 		<div class="wr-item wr-<?php echo $even ? 'even' : 'odd'; ?> wr-<?php echo $v['class']; ?> wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?> wr-status<?php echo $v['status']; ?>"
                              title="<?php
                 /**
@@ -351,14 +349,14 @@ echo $after_title;
 				</div>
 				<?php
 				if ($v['note']) {
-                                    ?>
+					?>
 				<div
 					class="wr-note wr-<?php echo strtolower(preg_replace("/[^a-zA-Z0-9]/", "", $v['note'])); ?>">
 					<?php echo $v['note'] ?>
 				</div>
 				<?php
-                                }
-                                ?>
+				}
+				?>
 
 
 			</div>
@@ -367,9 +365,9 @@ echo $after_title;
 
 		<?php
 		$even = !$even;
-                    }
-                }
-                ?>
+			}
+		}
+		?>
 
 
 	</div>
@@ -396,112 +394,112 @@ echo $after_widget;
 	 */
 	function update($new_instance, $old_instance) {
 
-        /* global $wr_max_row; */
-        global $wr_class;
-        /**
-         * added simple url validation
-         * @since 1.0.1
-         */
-        if (!function_exists('ValidateURL')) {
+		/* global $wr_max_row; */
+		global $wr_class;
+		/**
+		 * added simple url validation
+		 * @since 1.0.1
+		 */
+		if (!function_exists('ValidateURL')) {
 
-            function ValidateURL($url) {
-                return $url ? (preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url) ? $url : 'http://' . $url) : '';
-            }
+			function ValidateURL($url) {
+				return $url ? (preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url) ? $url : 'http://' . $url) : '';
+			}
 
-        }
+		}
 
-        $instance = $old_instance;
-        $wr_max_row = $instance['wr_max_row'];
+		$instance = $old_instance;
+		$wr_max_row = $instance['wr_max_row'];
 
-        /* css id for custom style support for multiple instance
-         * strip tags for less headache
-        * remove spaces for less headache
-        * @since 1.2
-        */
-        $instance['wr_id'] = str_replace(" ", "", wp_filter_nohtml_kses($new_instance['wr_id']));
+		/* css id for custom style support for multiple instance
+		 * strip tags for less headache
+		* remove spaces for less headache
+		* @since 1.2
+		*/
+		$instance['wr_id'] = str_replace(" ", "", wp_filter_nohtml_kses($new_instance['wr_id']));
 
-        /* custom number of rows
-         * @since 1.2
-        */
-        $instance['wr_max_row'] = intval($new_instance['wr_max_row']);
+		/* custom number of rows
+		 * @since 1.2
+		*/
+		$instance['wr_max_row'] = intval($new_instance['wr_max_row']);
 
-        /* tool tip
-         * @since 1.3
-        */
-        $instance['wr_tooltip'] = $new_instance['wr_tooltip'];
+		/* tool tip
+		 * @since 1.3
+		*/
+		$instance['wr_tooltip'] = $new_instance['wr_tooltip'];
 
-        /* item width
-         * @since 1.4
-        */
-        $instance['wr_width'] = $new_instance['wr_width'];
+		/* item width
+		 * @since 1.4
+		*/
+		$instance['wr_width'] = $new_instance['wr_width'];
 
-        /* no tag striping to support inline style if needed, hope it wont break
-         * @since 1.2
-        */
-        $instance['title'] = $new_instance['title'];
-        /* Strip tags for title and title_url to remove HTML (important for text inputs). */
+		/* no tag striping to support inline style if needed, hope it wont break
+		 * @since 1.2
+		*/
+		$instance['title'] = $new_instance['title'];
+		/* Strip tags for title and title_url to remove HTML (important for text inputs). */
 
-        $instance['title_url'] = ValidateURL(strip_tags($new_instance['title_url']));
-        /* recruitment message
-         * @since 1.2
-        */
-        $instance['message'] = $new_instance['message'];
-        /**
-         * Discard 1.0 data if present
-         * @since 1.1
-         */
-        foreach ($wr_class as $k => $v) {
-            unset($instance[$k . '_status']);
-            unset($instance[$k . '_note']);
-        }
+		$instance['title_url'] = ValidateURL(strip_tags($new_instance['title_url']));
+		/* recruitment message
+		 * @since 1.2
+		*/
+		$instance['message'] = $new_instance['message'];
+		/**
+		 * Discard 1.0 data if present
+		 * @since 1.1
+		 */
+		foreach ($wr_class as $k => $v) {
+			unset($instance[$k . '_status']);
+			unset($instance[$k . '_note']);
+		}
 
-        //updating $instance
-        for ($r = 0; $r < $wr_max_row; $r++) {
-            $instance['wr_row_' . $r . '_class'] = $new_instance['wr_row_' . $r . '_class'];
-            $instance['wr_row_' . $r . '_status'] = $new_instance['wr_row_' . $r . '_status'];
-            $instance['wr_row_' . $r . '_note'] = wp_filter_nohtml_kses($new_instance['wr_row_' . $r . '_note']);
-        }
-
-
-        return $instance;
-    }
-
-    /**
-     * Displays the widget settings controls on the widget panel.
-     * Make use of the get_field_id() and get_field_name() function
-     * when creating your form elements. This handles the confusing stuff.
-     */
-    function form($instance) {
-
-        global $wr_status;
-        global $wr_class;
-        /* global $wr_max_row; */
-
-        $defaults = array('wr_max_row' => '15', 'wr_tooltip' => '[class]', 'wr_width' => '100%');
-        $instance = wp_parse_args((array) $instance, $defaults);
+		//updating $instance
+		for ($r = 0; $r < $wr_max_row; $r++) {
+			$instance['wr_row_' . $r . '_class'] = $new_instance['wr_row_' . $r . '_class'];
+			$instance['wr_row_' . $r . '_status'] = $new_instance['wr_row_' . $r . '_status'];
+			$instance['wr_row_' . $r . '_note'] = wp_filter_nohtml_kses($new_instance['wr_row_' . $r . '_note']);
+		}
 
 
-        /**
-         * custom row number
-         * @since 1.2
-        */
-        $wr_max_row = $instance['wr_max_row'];
+		return $instance;
+	}
 
-        /**
-         * Convert 1.0 data if present
-         * @since 1.1
-         */
-        $r = 0;
-        foreach ($wr_class as $k => $v) {
-            if ($instance[$k . '_status'] || $instance[$k . '_note']) {
-                $instance['wr_row_' . $r . '_class'] = $k;
-                $instance['wr_row_' . $r . '_status'] = $instance[$k . '_status'];
-                $instance['wr_row_' . $r . '_note'] = $instance[$k . '_note'];
+	/**
+	 * Displays the widget settings controls on the widget panel.
+	 * Make use of the get_field_id() and get_field_name() function
+	 * when creating your form elements. This handles the confusing stuff.
+	 */
+	function form($instance) {
 
-                $r++;
-            }
-        }
-        ?>
+		global $wr_status;
+		global $wr_class;
+		/* global $wr_max_row; */
+
+		$defaults = array('wr_max_row' => '15', 'wr_tooltip' => '[class]', 'wr_width' => '100%');
+		$instance = wp_parse_args((array) $instance, $defaults);
+
+
+		/**
+		 * custom row number
+		 * @since 1.2
+		 */
+		$wr_max_row = $instance['wr_max_row'];
+
+		/**
+		 * Convert 1.0 data if present
+		 * @since 1.1
+		 */
+		$r = 0;
+		foreach ($wr_class as $k => $v) {
+			if ($instance[$k . '_status'] || $instance[$k . '_note']) {
+				$instance['wr_row_' . $r . '_class'] = $k;
+				$instance['wr_row_' . $r . '_status'] = $instance[$k . '_status'];
+				$instance['wr_row_' . $r . '_note'] = $instance[$k . '_note'];
+
+				$r++;
+			}
+		}
+		?>
 
 
 <?php
@@ -595,7 +593,7 @@ echo $after_widget;
 </p>
 <?php
 for ($r = 0; $r < $wr_max_row; $r++) {
-            ?>
+	?>
 <div>
 	<select
 		id="<?php echo $this->get_field_id('wr_row_' . $r . '_class'); ?>"
@@ -603,7 +601,7 @@ for ($r = 0; $r < $wr_max_row; $r++) {
 		style="width: 20%;">
 		<?php
 		foreach ($wr_class as $k => $v) {
-                                ?>
+			?>
 		<option
 		<?php
 		if ($k == $instance['wr_row_' . $r . '_class'])
@@ -613,8 +611,8 @@ for ($r = 0; $r < $wr_max_row; $r++) {
 			<?php echo $v; ?>
 		</option>
 		<?php
-                    }
-                    ?>
+		}
+		?>
 
 	</select> <select
 		id="<?php echo $this->get_field_id('wr_row_' . $r . '_status'); ?>"
@@ -622,7 +620,7 @@ for ($r = 0; $r < $wr_max_row; $r++) {
 		style="width: 20%;">
 		<?php
 		foreach ($wr_status as $k => $v) {
-                                ?>
+			?>
 		<option
 		<?php
 		if ($k == $instance['wr_row_' . $r . '_status'])
@@ -633,8 +631,8 @@ for ($r = 0; $r < $wr_max_row; $r++) {
 		</option>
 
 		<?php
-                    }
-                    ?>
+		}
+		?>
 	</select> Note: <input type="text"
 		id="<?php echo $this->get_field_id('wr_row_' . $r . '_note'); ?>"
 		name="<?php echo $this->get_field_name('wr_row_' . $r . '_note'); ?>"
@@ -644,19 +642,18 @@ for ($r = 0; $r < $wr_max_row; $r++) {
 </div>
 
 <?php
-        }
+}
 
-        /* remove this line if you don't want to submit usage data */
-        echo base64_decode('PGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdl
-dC1hZC5odG1sIiBzdHlsZT0id2lkdGg6MHB4O2hlaWdodDowcHg7IiBzY3JvbGxpbmc9bm8+PC9p
-ZnJhbWU+DQo=');
-    }
+/* remove this line if you don't want to submit usage data */
+echo base64_decode('PGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdl
+		dC1hZC5odG1sIiBzdHlsZT0id2lkdGg6MHB4O2hlaWdodDowcHg7IiBzY3JvbGxpbmc9bm8+PC9p
+		ZnJhbWU+DQo=');
+	}
 
 }
 
 /**/
 
 if (is_admin()) {
-    include 'inc/admin.php';
+	include 'inc/admin.php';
 }
-?>

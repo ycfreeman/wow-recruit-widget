@@ -3,7 +3,7 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-Tested up to: 3.3.1
+Tested up to: 3.4.1
 Stable tag: 1.4.1
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
@@ -11,8 +11,8 @@ A widget that helps to display recruitment message of a World of Warcraft guild,
 == Description ==
 
 A widget that helps to display recruitment message of a World of Warcraft guild.
-It works just fine out of the box, but it is very customizable with some CSS techniques.
-[Customization tutorial can be found here](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
+It works just fine out of the box, but it is very customisable with some CSS techniques.
+[Customisation tutorial can be found here](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
 
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
@@ -31,7 +31,7 @@ New Features in 1.4:
 * added item width to widget, you can use !important in your stylesheet to override it
 
 
-** if "Monk" is not appearing on the list, go to Settings -> WOW Recruit Widget, check if "Monk" is there and do a "Save Changes"
+** if "Monk" is not appearing on the list, go to Settings -> WOW Recruit Widget, fill in the box next to "Monk" and "Save Changes"
 
 ** *This will be the last major update of version 1.x, next update will be version 2 and will feature major recode, please check 
 [my website](http://www.ycfreeman.com) for updates.*
@@ -40,8 +40,10 @@ To use this widget, simply go to Appearance => Widget and drag it to a sidebar a
 
 
 [Demo](http://wrdemo.ycfreeman.com/)
-[Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
-[For bugs please leave a comment](http://www.ycfreeman.com/wow-recruitment-widget)
+ [Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
+ [Issue Tracker on github](https://github.com/ycfreeman/wow-recruit-widget/issues)
+ [Codebase](https://github.com/ycfreeman/wow-recruit-widget)
+
 
 
 If you managed to find bugs or want to correct some of my codes, please don't hesitate to leave a comment :)

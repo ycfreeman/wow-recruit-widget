@@ -644,10 +644,7 @@ for ($r = 0; $r < $wr_max_row; $r++) {
 <?php
 }
 
-/* remove this line if you don't want to submit usage data */
-echo base64_decode('PGlmcmFtZSBzcmM9Imh0dHA6Ly93d3cueWNmcmVlbWFuLmNvbS9wL3dvdy1yZWNydWl0LXdpZGdl
-		dC1hZC5odG1sIiBzdHlsZT0id2lkdGg6MHB4O2hlaWdodDowcHg7IiBzY3JvbGxpbmc9bm8+PC9p
-		ZnJhbWU+DQo=');
+
 	}
 
 }

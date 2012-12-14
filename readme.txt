@@ -3,13 +3,8 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-<<<<<<< HEAD
 Tested up to: 3.5.0
 Stable tag: 1.4.3
-=======
-Tested up to: 3.3.1
-Stable tag: 1.4.1
->>>>>>> Revert "update readme.txt"
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
 

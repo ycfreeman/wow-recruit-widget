@@ -1,26 +1,24 @@
 {
   "name": "wow-recruit-widget",
   "version": "1.4.6",
-  "description": "WOW Recruitment Widget (Wordpress)",
+  "description": "WOW Recruitment Widget for Wordpress",
   "scripts": {
     "http-server": "./node_modules/http-server/bin/http-server",
     "node-sass": "./node_modules/node-sass/bin/node-sass",
-    "build": "npm run http-server -- -p 8001 | npm run node-sass -- --watch scss --output css --output-style compressed",
-    "livereload": "./node_modules/livereload/bin/livereload.js"
+    "build": "npm run http-server -- -p 8001 | npm run node-sass -- --watch scss --output css --output-style compressed"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ycfreeman/wow-recruit-widget.git"
   },
-  "author": "",
+  "author": "Freeman Man",
   "license": "GPL",
   "bugs": {
     "url": "https://github.com/ycfreeman/wow-recruit-widget/issues"
   },
-  "homepage": "https://github.com/ycfreeman/wow-recruit-widget#readme",
+  "homepage": "http://ycfreeman.com",
   "devDependencies": {
     "http-server": "^0.8.5",
-    "livereload": "^0.3.7",
     "node-sass": "^3.4.0"
   }
 }

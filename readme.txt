@@ -20,7 +20,7 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 New in 1.4.6:
 
 * added demon hunter class
-* now this plugin uses npm to build stylesheets, and new csses are built with SCSS, see source code for details
+* this plugin now uses npm to build SCSS stylesheets, see source code for details, mixins will be useful if you're building your own wordpress theme
 
 ** I will not be actively updating this plugin, but I'll still do occasional update like this one when I'm bored,
 please feel free to fork this project from github.
@@ -55,6 +55,10 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 1. Here is how it looks (background is from my website, so it may not look exactly same on yours)
 
 == Changelog ==
+
+= 1.4.6 =
+* add demon hunter class
+* refactor stylesheet
 
 = 1.4.5 =
 * bump version number to fix svn/git conflicts
@@ -146,4 +150,6 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 * make sure you backup those color codes before upgrade if you have changed them before
 
 == Development Note ==
-npm run build - to build continuously until termination
+npm run build - to build stylesheets continuously to ./css/ until Ctrl+C to terminate, test page can be viewed at http://localhost:8001
+require npm to run
+only tested on Mac, will work in *nix platforms, should work in Windows too.

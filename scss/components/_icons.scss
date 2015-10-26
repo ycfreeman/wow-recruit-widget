@@ -1,0 +1,19 @@
+/*class icon image sprite*/
+
+.wr-icon {
+  vertical-align: middle;
+  width: $iconSize;
+  height: $iconSize;
+  background-image: url(#{$iconSpritePath});
+  border-radius: $iconBorderRadius;
+  box-shadow: $iconBoxShadow;
+  border: $iconBorder;
+}
+
+@for $index from 1 through length($classes) {
+  $className: nth(nth($classes, $index), 1);
+
+  .wr-#{$className} {
+    background-position: -(($index - 1) * $iconSize) 0;
+  }
+}

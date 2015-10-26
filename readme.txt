@@ -3,8 +3,8 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-Tested up to: 3.5.0
-Stable tag: 1.4.5
+Tested up to: 4.4.x
+Stable tag: 1.4.6
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
 
@@ -17,23 +17,13 @@ It works just fine out of the box, but it is very customizable with some CSS tec
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
 
-New in 1.4.3:
+New in 1.4.6:
 
-* set default options for settings page. as a fix for [this issue](http://wordpress.org/support/topic/plugin-errors-2?replies=2)
+* added demon hunter class
+* now this plugin uses npm to build stylesheets, and new csses are built with SCSS, see source code for details
 
-New Features in 1.4:
-
-* added monk class
-* slightly larger icons
-* few updates to default stylesheet, now uses float instead of absolute position, also with icon chrome in css3
-* minor change to markup to accompany the stylesheet changes
-* added item width to widget, you can use !important in your stylesheet to override it
-
-
-** if "Monk" is not appearing on the list, go to Settings -> WOW Recruit Widget, check if "Monk" is there and do a "Save Changes"
-
-** *This will be the last major update of version 1.x, there may be a version 2, please check 
-[my website](http://www.ycfreeman.com) for updates.*
+** I will not be actively updating this plugin, but I'll still do occasional update like this one when I'm bored,
+please feel free to fork this project from github.
 
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
@@ -154,3 +144,6 @@ If you managed to find bugs or want to correct some of my codes, please don't he
 == Upgrade Notice ==
 * please save the widget once after upgrade from 1.0.x to make it work with new codes, 
 * make sure you backup those color codes before upgrade if you have changed them before
+
+== Development Note ==
+npm run build - to build continuously until termination

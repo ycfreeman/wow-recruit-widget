@@ -1,0 +1,118 @@
+/**
+ * Plugin Name: WOW Recruitment Widget
+ * Plugin URI: http://www.ycfreeman.com/wow-recruitment-widget
+ * Description: Stylesheet for WOW recruitment widget
+ * Version: 1.4.6
+ * Author: Freeman Man
+ * Author URI: http://www.ycfreeman.com
+ */
+
+/**
+        WOW Recruit Widget Layout Stylesheet
+
+        Use the CSS rules below to modify the look of your widget.
+
+        To create additional rules, use the markup below as a guide to WOW Recruit Widget's Layout architecture.
+
+        <div class="wow-recruit-widget">
+                <ul class="wr-container">
+                        <li class="wr-item wr-odd">
+                                <div class="wr-left">
+                                        <img class="wr-icon" src="images/class-shaman.png" />
+                                </div>
+                                <div class="wr-right">
+                                        <div class="wr-class-text wr-shaman">
+                                                Shaman
+                                        </div>
+                                        <div class="wr-status wr-high">
+                                                High
+                                        </div>
+                                        <div class="wr-note">
+                                                Note: Enhancement
+                                        </div>
+                                </div>
+                        </li>
+                        <li class="wr-item wr-even">
+                                <div class="wr-left">
+                                        <img class="wr-icon" src="images/class-shaman.png" />
+                                </div>
+                                <div class="wr-right">
+                                        <div class="wr-class-text wr-shaman">
+                                                Shaman
+                                        </div>
+                                        <div class="wr-status wr-medium">
+                                                Medium
+                                        </div>
+                                        <div class="wr-note">
+                                                Note: Restoration
+                                        </div>
+                                </div>
+                        </li>
+                </ul>
+        <div>
+*/
+
+/*widget layout css*/
+.wr-clear {
+  float: none;
+  clear: both;
+}
+
+/*widget font settings*/
+.wow-recruit-widget {
+
+  /*font-family:verdana,arial,sans-serif;*/
+
+  width: 100%;
+}
+
+.wr-message {
+  margin-bottom: 10px;
+}
+
+.wr-container {
+  font-weight: bold;
+  font-size: $baseFontSize;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wr-item {
+  display: block;
+  padding: $spacing 0;
+  overflow: hidden;
+  border-bottom: 1px solid $borderColor;
+}
+
+.wr-left {
+  display: block;
+  float: left;
+  width: $iconSize;
+  height: $iconSize + 2px;
+  text-align: center;
+}
+
+.wr-right {
+  display: block;
+  margin-left: $iconSize + $spacing;
+}
+
+.wr-class-text {
+  display: block;
+  float: left;
+  margin-left: $spacing;
+}
+
+.wr-status {
+  display: block;
+  text-align: right;
+}
+
+.wr-note {
+  margin-top: $spacing;
+  margin-left: $spacing;
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+}

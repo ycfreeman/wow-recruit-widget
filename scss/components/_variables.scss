@@ -1,0 +1,27 @@
+/*class colors*/
+$classes: (
+                ("deathknight", #C41F3B),
+                ("druid", #FF7D0A),
+                ("hunter", #ABD473),
+                ("mage", #69CCF0),
+                ("paladin", #F58CBA),
+                ("priest", #FFFFFF),
+                ("rogue", #FFF569),
+                ("shaman", #2459FF),
+                ("warlock", #9482CA),
+                ("warrior", #C79C6E),
+                ("monk", #008080),
+                ("demonhunter", #4dd827),
+) !default;
+
+$baseFontSize: .9em !default;
+$spacing: 5px !default;
+$iconSpritePath: "../img/class-sprite-36.jpg" !default;
+$iconSize: 36px !default;
+$iconBorderRadius: 4px !default;
+$borderColor: #dddddd !default;
+$iconBorderColor: #aaa !default;
+$iconShadowInset: #ddd !default;
+$iconShadow: #000 !default;
+$iconBoxShadow: 0 0 3px $iconShadow, inset 0 0 5px $iconShadowInset !default;
+$iconBorder: 1px solid $iconBorderColor !default;

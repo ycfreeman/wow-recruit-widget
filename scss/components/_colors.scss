@@ -1,0 +1,26 @@
+/* class colors */
+@each $class in $classes {
+  $className: nth($class, 1);
+  $classColor: nth($class, 2);
+
+  .wr-#{$className} {
+    color: $classColor;
+  }
+}
+
+/*status colors, currently using wowprogress.com colors*/
+.wr-status3 {
+  color: #FF420E;
+}
+
+.wr-status2 {
+  color: #FFD320;
+}
+
+.wr-status1 {
+  color: #1EF1A2;
+}
+
+.wr-note {
+  color: #cee683;
+}

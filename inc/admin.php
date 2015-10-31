@@ -26,14 +26,18 @@ function wow_recruitoptions_do_page()
             <br>
         </div>
         <h2>
-            WOW Recruit Widget Options &nbsp;<a href="<?php echo WR_HELP_URL; ?>"
-                                                target="_blank"><img
-                    src="<?php echo WR_PATH; ?>/img/ic_info_outline.svg"
-                    alt="view more info"/> </a> &nbsp;<a
-                href="<?php echo WR_BUG_URL; ?>" target="_blank"><img
-                    src="<?php echo WR_PATH; ?>/img/ic_bug_report.svg" alt="report bugs"/> </a>
+            WOW Recruit Widget Options
         </h2>
 
+        <p><a href="<?php echo WR_HELP_URL; ?>"
+              target="_blank">
+                <img style="vertical-align: middle;"
+                     src="<?php echo WR_INFO_ICON_URL; ?>"
+                     alt="view more info"/>Plugin Documentations</a>
+            <a href="<?php echo WR_BUG_URL; ?>" target="_blank">
+                <img style="vertical-align: middle;"
+                     src="<?php echo WR_BUG_ICON_URL; ?>"
+                     alt="report bugs"/>Report Bugs</a></p>
 
         <form method="post" action="options.php">
             <?php settings_fields('wow_recruitoptions_options'); ?>
@@ -52,9 +56,9 @@ function wow_recruitoptions_do_page()
                          * @since 1.4.1
                          */
                         $themes = array(
-                            "Plugin Default" => "",
-                            "For Narrow Sidebars" => "small",
-                            "Huge Icons" => "large"
+                            "Plugin Default (36px)" => "",
+                            "Small Icons (25px)" => "small",
+                            "Huge Icons (56px)" => "large"
                         );
                         ?> <select name="wow_recruit[theme]">
                             <?php

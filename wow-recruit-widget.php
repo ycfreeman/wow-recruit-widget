@@ -16,12 +16,8 @@
 define("WR_HELP_URL", "http://ycfreeman.com/wow-recruitment-widget");
 define("WR_BUG_URL", "https://github.com/ycfreeman/wow-recruit-widget/issues");
 
-/**
- * bulletproof plugin path handling
- * @since 1.3
- */
-define("WR_PATH", WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__)));
-
+define("WR_BUG_ICON_URL", plugins_url("img/ic_bug_report.svg", __FILE__));
+define("WR_INFO_ICON_URL", plugins_url("img/ic_info_outline.svg", __FILE__));
 
 /**
  * Add function to widgets_init that'll load our widget.
@@ -130,7 +126,7 @@ if (!$wr_options['custom_style']) {
         function wow_recruit_widget_enqueue_styles()
         {
             $wr_options = get_option('wow_recruit');
-            wp_enqueue_style('wr_layout', WR_PATH . 'css/style' . (($wr_options['theme'] != '') ? '-' . $wr_options['theme'] : '') . '.css');
+            wp_enqueue_style('wr_layout', plugins_url('css/style' . (($wr_options['theme'] != '') ? '-' . $wr_options['theme'] : '') . '.css', __FILE__));
         }
     }
 
@@ -160,7 +156,10 @@ class Wow_Recruit_Widget extends WP_Widget
     function Wow_Recruit_Widget()
     {
         /* Widget settings. */
-        $widget_ops = array('classname' => 'wow-recruit', 'description' => __('Displays your guild\'s recruitment status.', 'wow-recruit'));
+        $widget_ops = array(
+            'classname' => 'wow-recruit',
+            'description' => __('Displays your guild\'s recruitment status.', 'wow-recruit')
+        );
 
         /* Widget control settings. */
         $control_ops = array('width' => 500, 'height' => 600, 'id_base' => 'wow-recruit-widget');
@@ -205,10 +204,11 @@ class Wow_Recruit_Widget extends WP_Widget
         */
 
 
-        if (isset($instance['wr_max_row']))
+        if (isset($instance['wr_max_row'])) {
             $wr_max_row = $instance['wr_max_row'];
-        else
+        } else {
             $wr_max_row = 15;
+        }
 
         /* Before widget (defined by themes). */
         echo $before_widget;
@@ -269,8 +269,10 @@ class Wow_Recruit_Widget extends WP_Widget
 
         /**
          * corrected sort algorithm
+         *
          * @param <type> $a
          * @param <type> $b
+         *
          * @return <int>
          * @since 1.1.1
          */
@@ -280,10 +282,11 @@ class Wow_Recruit_Widget extends WP_Widget
             {
                 if ($a['status'] == $b['status']) {
                     return ($a['class'] == $b['class']) ? 0 : (($a['class'] < $b['class']) ? -1 : 1);
-                } else if (($a['status'] > $b['status']))
+                } else if (($a['status'] > $b['status'])) {
                     return -1;
-                else
+                } else {
                     return 1;
+                }
             }
 
         }
@@ -501,10 +504,10 @@ class Wow_Recruit_Widget extends WP_Widget
         ?>
         <div style="float: right;">
             <a href="<?php echo WR_HELP_URL; ?>" target="_blank"> <img
-                    src="<?php echo YCFREEMAN_HELP_ICON_URL; ?>" title="view more info"
+                    src="<?php echo WR_INFO_ICON_URL; ?>" title="view more info"
                     alt="view more info"/>
             </a> <a href="<?php echo WR_BUG_URL; ?>" target="_blank"> <img
-                    src="<?php echo YCFREEMAN_BUG_ICON_URL; ?>" title="report bugs"
+                    src="<?php echo WR_BUG_ICON_URL; ?>" title="report bugs"
                     alt="report bugs"/>
             </a>
         </div>
@@ -598,8 +601,9 @@ class Wow_Recruit_Widget extends WP_Widget
                         ?>
                         <option
                             <?php
-                            if ($k == $instance['wr_row_' . $r . '_class'])
+                            if ($k == $instance['wr_row_' . $r . '_class']) {
                                 echo 'selected="selected"';
+                            }
                             ?>
                             value="<?php echo $k; ?>">
                             <?php echo $v; ?>
@@ -617,8 +621,9 @@ class Wow_Recruit_Widget extends WP_Widget
                         ?>
                         <option
                             <?php
-                            if ($k == $instance['wr_row_' . $r . '_status'])
+                            if ($k == $instance['wr_row_' . $r . '_status']) {
                                 echo 'selected="selected"';
+                            }
                             ?>
                             value="<?php echo $k; ?>">
                             <?php echo $v; ?>

@@ -1,6 +1,6 @@
 {
-  "name": "wow-recruit-widget",
-  "version": "1.4.6",
+  "name": "wow-guild-recruitment-widget",
+  "version": "1.4.8",
   "description": "WOW Recruitment Widget for Wordpress",
   "scripts": {
     "http-server": "./node_modules/http-server/bin/http-server",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ycfreeman/wow-recruit-widget.git"
+    "url": "git+https://github.com/ycfreeman/wow-guild-recruitment-widget.git"
   },
   "author": "Freeman Man",
   "license": "GPL",
   "bugs": {
-    "url": "https://github.com/ycfreeman/wow-recruit-widget/issues"
+    "url": "https://github.com/ycfreeman/wow-guild-recruitment-widget/issues"
   },
   "homepage": "http://ycfreeman.com",
   "devDependencies": {

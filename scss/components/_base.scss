@@ -1,13 +1,4 @@
 /**
- * Plugin Name: WOW Recruitment Widget
- * Plugin URI: http://www.ycfreeman.com/wow-recruitment-widget
- * Description: Stylesheet for WOW recruitment widget
- * Version: 1.4.6
- * Author: Freeman Man
- * Author URI: http://www.ycfreeman.com
- */
-
-/**
         WOW Recruit Widget Layout Stylesheet
 
         Use the CSS rules below to modify the look of your widget.
@@ -81,8 +72,9 @@
 .wr-item {
   display: block;
   padding: $spacing 0;
-  overflow: hidden;
   border-bottom: 1px solid $borderColor;
+  float: left;
+  width: 100%;
 }
 
 .wr-left {

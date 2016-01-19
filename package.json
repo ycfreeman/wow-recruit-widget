@@ -1,6 +1,6 @@
 {
   "name": "wow-recruit-widget",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "description": "WOW Recruitment Widget for Wordpress",
   "scripts": {
     "http-server": "./node_modules/http-server/bin/http-server",

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8563590c-3701-435a-b642-47e154bd29bf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style-large.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style-small.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/wow-recruit-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scss/style-large.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scss/style-small.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/components/_base.scss" afterPath="$PROJECT_DIR$/scss/components/_base.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/style.scss" afterPath="$PROJECT_DIR$/scss/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wow-recruit-widget.php" afterPath="$PROJECT_DIR$/wow-recruit-widget.php" />
     </list>
     <ignored path="wow-recruit-widget.iws" />
@@ -72,18 +65,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wow-recruit-widget.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wow-recruit-widget.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wow-recruit-widget.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.384154">
-              <caret line="306" column="52" selection-start-line="306" selection-start-column="52" selection-end-line="306" selection-end-column="52" />
+            <state vertical-scroll-proportion="-2.0588236">
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
               <folding>
-                <element signature="e#6#533#0#PHP" expanded="true" />
                 <element signature="e#2302#2455#0#PHP" expanded="false" />
                 <element signature="e#8680#8704#0#HTML" expanded="true" />
-                <marker date="1453215337000" expanded="true" signature="7711:7844" placeholder="..." />
-                <marker date="1453215337000" expanded="true" signature="7739:7844" placeholder="..." />
-                <marker date="1453215337000" expanded="true" signature="7778:7844" placeholder="..." />
+                <marker date="1453215531000" expanded="true" signature="7711:7844" placeholder="..." />
+                <marker date="1453215531000" expanded="true" signature="7739:7844" placeholder="..." />
+                <marker date="1453215531000" expanded="true" signature="7778:7844" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -94,6 +86,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49867022">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,7 +114,7 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-1.25">
               <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
@@ -135,11 +137,11 @@
         <option value="$PROJECT_DIR$/inc/classes/wow_recruit_widget.php" />
         <option value="$PROJECT_DIR$/inc/classes/widget.php" />
         <option value="$PROJECT_DIR$/inc/widget.php" />
+        <option value="$PROJECT_DIR$/inc/admin.php" />
+        <option value="$PROJECT_DIR$/scss/components/_base.scss" />
+        <option value="$PROJECT_DIR$/wow-recruit-widget.php" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/inc/admin.php" />
-        <option value="$PROJECT_DIR$/wow-recruit-widget.php" />
-        <option value="$PROJECT_DIR$/scss/components/_base.scss" />
       </list>
     </option>
   </component>
@@ -244,6 +246,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wow-recruit-widget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wow-recruit-widget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -498,12 +514,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="629" column="18" selection-start-line="629" selection-start-column="18" selection-end-line="629" selection-end-column="18" />
           <folding>
-            <element signature="e#6#533#0#PHP" expanded="true" />
             <element signature="e#2302#2455#0#PHP" expanded="false" />
             <element signature="e#8680#8704#0#HTML" expanded="true" />
-            <marker date="1453215337000" expanded="true" signature="7711:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7739:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7778:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7711:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7739:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7778:7844" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -569,12 +584,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <element signature="e#6#533#0#PHP" expanded="true" />
             <element signature="e#2302#2455#0#PHP" expanded="false" />
             <element signature="e#8680#8704#0#HTML" expanded="true" />
-            <marker date="1453215337000" expanded="true" signature="7711:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7739:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7778:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7711:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7739:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7778:7844" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -640,12 +654,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <element signature="e#6#533#0#PHP" expanded="true" />
             <element signature="e#2302#2455#0#PHP" expanded="false" />
             <element signature="e#8680#8704#0#HTML" expanded="true" />
-            <marker date="1453215337000" expanded="true" signature="7711:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7739:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7778:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7711:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7739:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7778:7844" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -679,12 +692,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6#533#0#PHP" expanded="true" />
             <element signature="e#2302#2455#0#PHP" expanded="false" />
             <element signature="e#8680#8704#0#HTML" expanded="true" />
-            <marker date="1453215337000" expanded="true" signature="7711:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7739:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7778:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7711:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7739:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7778:7844" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -706,42 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.840909">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="59" column="60" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -772,16 +752,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wow-recruit-widget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.384154">
-          <caret line="306" column="52" selection-start-line="306" selection-start-column="52" selection-end-line="306" selection-end-column="52" />
+        <state vertical-scroll-proportion="-2.0588236">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding>
-            <element signature="e#6#533#0#PHP" expanded="true" />
             <element signature="e#2302#2455#0#PHP" expanded="false" />
             <element signature="e#8680#8704#0#HTML" expanded="true" />
-            <marker date="1453215337000" expanded="true" signature="7711:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7739:7844" placeholder="..." />
-            <marker date="1453215337000" expanded="true" signature="7778:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7711:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7739:7844" placeholder="..." />
+            <marker date="1453215531000" expanded="true" signature="7778:7844" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="59" column="60" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49867022">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

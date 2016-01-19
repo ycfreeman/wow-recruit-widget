@@ -126,7 +126,7 @@ if (!$wr_options['custom_style']) {
         function wow_recruit_widget_enqueue_styles()
         {
             $wr_options = get_option('wow_recruit');
-            wp_enqueue_style('wr_layout', plugins_url('css/style' . (($wr_options['theme'] != '') ? '-' . $wr_options['theme'] : '') . '.css', __FILE__));
+            wp_enqueue_style('wr_layout', plugins_url('css/style.css', __FILE__));
         }
     }
 
@@ -138,6 +138,7 @@ if (!$wr_options['custom_style']) {
  */
 
 $wr_display_closed = $wr_options['display_closed'];
+$wr_theme = $wr_options['theme'];
 
 
 /**
@@ -177,6 +178,7 @@ class Wow_Recruit_Widget extends WP_Widget
         global $wr_status;
         global $wr_class;
         global $wr_display_closed;
+        global $wr_theme;
         /* global $wr_max_row; */
 
         extract($args);
@@ -302,7 +304,7 @@ class Wow_Recruit_Widget extends WP_Widget
          */
         ?>
         <div class="wr-clear"></div>
-        <div class="wow-recruit-widget" <?php if ($title_url) {
+        <div class="wow-recruit-widget <?php echo ($wr_theme ? 'wr-' . $wr_theme : 'wr-normal') ?>" <?php if ($title_url) {
             ?>
             onclick="location.href='<?php echo $title_url; ?>';"
             style="cursor: pointer;" <?php } ?>>

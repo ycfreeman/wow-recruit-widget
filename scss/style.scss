@@ -1,4 +1,18 @@
-$iconSpritePath: "../images/class-sprite-36.jpg";
-$iconSize: 36px;
+.wr-normal {
+  $iconSpritePath: "../images/class-sprite-36.jpg";
+  $iconSize: 36px;
+  @import "all";
+}
 
-@import "all";
+.wr-large {
+  $iconSpritePath: "../images/class-sprite-56.jpg";
+  $iconSize: 56px;
+  @import "all";
+}
+
+.wr-small {
+  $iconSpritePath: "../images/class-sprite-25.jpg";
+  $iconSize: 25px;
+  @import "all";
+}
+

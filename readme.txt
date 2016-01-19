@@ -28,7 +28,7 @@ please feel free to fork this project from github.
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
 
-* [Plugin site] (https://wordpress.org/plugins/wow-recruit-widget/)
+* [Plugin site](https://wordpress.org/plugins/wow-recruit-widget/)
 * [Demo](http://wrdemo.ycfreeman.com/)
 * [Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
 * [Issue Tracker on github](https://github.com/ycfreeman/wow-guild-recruitment-widget/issues)

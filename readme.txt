@@ -4,7 +4,7 @@ Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
 Tested up to: 4.4.1
-Stable tag: 1.4.9
+Stable tag: 1.4.10
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
 
@@ -57,6 +57,8 @@ If you found bugs or want to correct some of my codes, please file issues in git
 2. Dark theme, small icons
 
 == Changelog ==
+
+= 1.4.10 =
 
 = 1.4.9 =
 * fix pathing issue reported by jwetz87
@@ -162,6 +164,8 @@ If you found bugs or want to correct some of my codes, please file issues in git
 * make sure you backup those color codes before upgrade if you have changed them before
 
 == Development Note ==
-npm run build - to build stylesheets continuously to ./css/ until Ctrl+C to terminate, test page can be viewed at http://localhost:8001
-require npm to run
-only tested on Mac, will work in *nix platforms, should work in Windows too.
+require [npm](https://www.npmjs.com/) to build stylesheets
+
+<code>npm run build</code> to build stylesheets continuously to ./css/ until Ctrl+C to terminate, test page can be viewed at http://localhost:8001
+
+only tested on Mac, should work in *nix platforms, should work in Windows too

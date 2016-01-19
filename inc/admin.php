@@ -2,23 +2,23 @@
 /**
  * WOW Recruitment Widget Admin Page
  */
-add_action('admin_init', 'wow_recruitoptions_init');
-add_action('admin_menu', 'wow_recruitoptions_add_page');
+add_action('admin_init', 'wow_recruit_options_init');
+add_action('admin_menu', 'wow_recruit_options_add_page');
 
 // Init plugin options to white list our options
-function wow_recruitoptions_init()
+function wow_recruit_options_init()
 {
-    register_setting('wow_recruitoptions_options', 'wow_recruit', 'wow_recruitoptions_validate');
+    register_setting('wow_recruit_options_options', 'wow_recruit', 'wow_recruit_options_validate');
 }
 
 // Add menu page
-function wow_recruitoptions_add_page()
+function wow_recruit_options_add_page()
 {
-    add_options_page('WOW Recruit Widget Options', 'WOW Recruit Widget', 'manage_options', 'wow_recruitoptions', 'wow_recruitoptions_do_page');
+    add_options_page('WOW Recruit Widget Options', 'WOW Recruit Widget', 'manage_options', 'wow_recruit_options', 'wow_recruit_options_do_page');
 }
 
 // Draw the menu page itself
-function wow_recruitoptions_do_page()
+function wow_recruit_options_do_page()
 {
     ?>
     <div class="wrap">
@@ -40,7 +40,7 @@ function wow_recruitoptions_do_page()
                      alt="report bugs"/>Report Bugs</a></p>
 
         <form method="post" action="options.php">
-            <?php settings_fields('wow_recruitoptions_options'); ?>
+            <?php settings_fields('wow_recruit_options_options'); ?>
             <?php $options = get_option('wow_recruit'); ?>
             <table class="form-table">
                 <tr valign="top">
@@ -177,7 +177,7 @@ function wow_recruitoptions_do_page()
 }
 
 // Sanitize and validate input. Accepts an array, return a sanitized array.
-function wow_recruitoptions_validate($input)
+function wow_recruit_options_validate($input)
 {
 
     foreach ($input as $k => $v) {

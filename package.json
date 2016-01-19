@@ -1,24 +1,26 @@
 {
-  "name": "wow-guild-recruitment-widget",
-  "version": "1.4.8",
+  "name": "wow-recruit-widget",
+  "version": "1.4.9",
   "description": "WOW Recruitment Widget for Wordpress",
   "scripts": {
     "http-server": "./node_modules/http-server/bin/http-server",
     "node-sass": "./node_modules/node-sass/bin/node-sass",
-    "build": "npm run http-server -- -p 8001 | npm run node-sass -- --watch scss --output css --output-style compressed"
+    "build-sass": "npm run node-sass -- scss --output css --output-style compressed",
+    "watch-sass": "npm run node-sass -- --watch scss --output css --output-style compressed",
+    "build": "npm run http-server -- -p 8001 | npm run build-sass | npm run watch-sass"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ycfreeman/wow-guild-recruitment-widget.git"
+    "url": "git+https://github.com/ycfreeman/wow-recruit-widget.git"
   },
   "author": "Freeman Man",
   "license": "GPL",
   "bugs": {
-    "url": "https://github.com/ycfreeman/wow-guild-recruitment-widget/issues"
+    "url": "https://github.com/ycfreeman/wow-recruit-widget/issues"
   },
   "homepage": "http://ycfreeman.com",
   "devDependencies": {
     "http-server": "^0.8.5",
-    "node-sass": "^3.4.0"
+    "node-sass": "^3.4.2"
   }
 }

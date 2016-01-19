@@ -5,7 +5,7 @@
  * Description: A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
  * please save the widget once after upgrade from 1.0.x to make it work with new codes,
  * make sure you backup those color codes before upgrade if you have changed them before
- * Version: 1.4.8
+ * Version: 1.4.9
  * Author: Freeman Man
  * Author URI: http://www.ycfreeman.com
  */
@@ -16,8 +16,8 @@
 define("WR_HELP_URL", "http://ycfreeman.com/wow-recruitment-widget");
 define("WR_BUG_URL", "https://github.com/ycfreeman/wow-recruit-widget/issues");
 
-define("WR_BUG_ICON_URL", plugins_url("img/ic_bug_report.svg", __FILE__));
-define("WR_INFO_ICON_URL", plugins_url("img/ic_info_outline.svg", __FILE__));
+define("WR_BUG_ICON_URL", plugins_url("images/ic_bug_report.svg", __FILE__));
+define("WR_INFO_ICON_URL", plugins_url("images/ic_info_outline.svg", __FILE__));
 
 /**
  * Add function to widgets_init that'll load our widget.
@@ -228,6 +228,7 @@ class Wow_Recruit_Widget extends WP_Widget
             }
         }
 
+        $wr_data = [];
         //prepare for sorting machanim
         for ($r = 0; $r < $wr_max_row; $r++) {
             ${

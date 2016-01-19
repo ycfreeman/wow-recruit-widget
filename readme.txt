@@ -3,8 +3,8 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-Tested up to: 4.4.0
-Stable tag: 1.4.8
+Tested up to: 4.4.1
+Stable tag: 1.4.9
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.
 
@@ -28,6 +28,7 @@ please feel free to fork this project from github.
 To use this widget, simply go to Appearance => Widget and drag it to a sidebar as similar to other widgets.
 
 
+* [Plugin site] (https://wordpress.org/plugins/wow-recruit-widget/)
 * [Demo](http://wrdemo.ycfreeman.com/)
 * [Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
 * [Issue Tracker on github](https://github.com/ycfreeman/wow-guild-recruitment-widget/issues)
@@ -53,9 +54,12 @@ If you found bugs or want to correct some of my codes, please file issues in git
 == Screenshots ==
 
 1. Here is how it looks
-2.
+2. Dark theme, small icons
 
 == Changelog ==
+
+= 1.4.9 =
+* fix pathing issue reported by jwetz87
 
 = 1.4.8 =
 * forgot to bump version

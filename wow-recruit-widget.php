@@ -139,7 +139,7 @@ if (!$wr_options['custom_style']) {
 
 $wr_display_closed = $wr_options['display_closed'];
 
-include_once "inc/classes/widget.php";
+include_once "inc/widget.php";
 
 if (is_admin()) {
     include_once 'inc/admin.php';

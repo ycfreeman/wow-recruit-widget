@@ -25,7 +25,7 @@ class Wow_Recruit_Widget extends WP_Widget
         $control_ops = array('width' => 500, 'height' => 600, 'id_base' => 'wow-recruit-widget');
 
         /* Create the widget. */
-        $this->WP_Widget('wow-recruit-widget', __('WOW Recruitment Widget', 'wow-recruit'), $widget_ops, $control_ops);
+        $this->WP_Widget('wow-recruit-widget', __('WOW Recruit Widget', 'wow-recruit'), $widget_ops, $control_ops);
     }
 
     /**
@@ -456,9 +456,9 @@ class Wow_Recruit_Widget extends WP_Widget
         <table>
             <thead>
             <tr>
-                <th style="text-align: left; width: 20%;"><?php _e('Class', 'wow-recruit'); ?>Class</th>
-                <th style="text-align: left; width: 20%;"><?php _e('Status', 'wow-recruit'); ?>Status</th>
-                <th style="text-align: left;"><?php _e('Notes', 'wow-recruit'); ?>Notes</th>
+                <th style="text-align: left; width: 20%;"><?php _e('Class', 'wow-recruit'); ?></th>
+                <th style="text-align: left; width: 20%;"><?php _e('Status', 'wow-recruit'); ?></th>
+                <th style="text-align: left;"><?php _e('Note', 'wow-recruit'); ?></th>
             </tr>
             </thead>
             <tbody>

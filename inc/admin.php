@@ -75,7 +75,7 @@ function wow_recruit_options_do_page()
 
                 </tr>
                 <tr valign="top">
-                    <td><h3>Status Texts</h3></td>
+                    <td style="padding:0;"><h3>Status Texts</h3></td>
                 </tr>
                 <tr valign="top">
                     <th scope="row">High</th>
@@ -93,7 +93,7 @@ function wow_recruit_options_do_page()
                                value="<?php echo $options['status1']; ?>"/></td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row">Closed (display? <input
+                    <th scope="row">Closed ( Show in Widget? <input
                             name="wow_recruit[display_closed]" type="checkbox" value="1"
                             <?php checked('1', $options['display_closed']); ?> />)
                     </th>
@@ -104,7 +104,7 @@ function wow_recruit_options_do_page()
                     <td>&nbsp;</td>
                 </tr>
                 <tr valign="top">
-                    <td><h3>Class Texts</h3></td>
+                    <td style="padding:0;"><h3>Class Texts</h3></td>
                 </tr>
                 <tr valign="top">
                     <th scope="row">Death Knight</th>

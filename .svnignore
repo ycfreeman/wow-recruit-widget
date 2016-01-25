@@ -1,5 +1,7 @@
-bin/
-tests/
+bin
+bin/*
+tests/*
 phpunit.xml
 .travis.yml
-.idea/
+.idea
+.idea/*

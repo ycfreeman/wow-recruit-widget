@@ -230,7 +230,7 @@ class Wow_Recruit_Widget extends WP_Widget
             }
         }
 
-        $wr_data = [];
+        $wr_data = array();
 //prepare for sorting machanim
         for ($r = 0; $r < $wr_max_row; $r++) {
             ${
@@ -675,5 +675,5 @@ class Wow_Recruit_Widget extends WP_Widget
 
 
 if (is_admin()) {
-    include_once 'inc/admin.php';
+    include_once './inc/admin.php';
 }

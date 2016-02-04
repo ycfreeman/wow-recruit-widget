@@ -1,6 +1,6 @@
 === WOW Recruitment Widget ===
 Contributors: ycfreeman
-Donate Link: https://www.paypal.me/ycfreeman
+Donate Link: http://ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
 Tested up to: 4.4.1

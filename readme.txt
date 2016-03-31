@@ -3,7 +3,7 @@ Contributors: ycfreeman
 Donate Link: http://www.ycfreeman.com
 Tags: WOW, Warcraft, Guild, World of Warcraft, Recruitment
 Requires at least: 2.8
-Tested up to: 4.4.1
+Tested up to: 4.5
 Stable tag: 1.4.12
 
 A widget that helps to display recruitment message of a World of Warcraft guild, also can be used for other games that have different classes.

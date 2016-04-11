@@ -14,7 +14,7 @@ A widget that helps to display recruitment message of a World of Warcraft guild.
 It works just fine out of the box, but it is very customizable with some CSS techniques.
 [Customization tutorial can be found here](http://www.ycfreeman.com/2010/08/wow-recruitment-wordpress-widget.html)
 
-* please save the widget once after upgrade from 1.0.x to make it work with new codes, 
+* please save the widget once after upgrade from 1.0.x to make it work with new codes,
 * make sure you backup those color codes before upgrade if you have changed them before 1.2
 
 New in 1.4.6:
@@ -29,7 +29,7 @@ To use this widget, simply go to Appearance => Widget and drag it to a sidebar a
 
 
 * [Plugin site](https://wordpress.org/plugins/wow-recruit-widget/)
-* [Demo](http://wrdemo.ycfreeman.com/)
+* [Demo](http://demo.ycfreeman.com/)
 * [Full description on the web page of this plugin](http://www.ycfreeman.com/wow-recruitment-widget)
 * [Issue Tracker on github](https://github.com/ycfreeman/wow-guild-recruitment-widget/issues)
 * [Source Code](https://github.com/ycfreeman/wow-guild-recruitment-widget)
@@ -152,7 +152,7 @@ If you found bugs or want to correct some of my codes, please file issues in git
 * class icons are combined into css sprite
 * new sorting method used, it should sort by status then class as intended now
 
-= 1.0.1 = 
+= 1.0.1 =
 * minor changes to path handling, added some simple URL validation, and some descriptions in widget
 
 = 1.0 =
@@ -160,7 +160,7 @@ If you found bugs or want to correct some of my codes, please file issues in git
 
 
 == Upgrade Notice ==
-* please save the widget once after upgrade from 1.0.x to make it work with new codes, 
+* please save the widget once after upgrade from 1.0.x to make it work with new codes,
 * make sure you backup those color codes before upgrade if you have changed them before
 
 == Development Note ==
